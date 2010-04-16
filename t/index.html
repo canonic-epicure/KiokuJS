@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+        <script type="text/javascript" src="/jsan/Task/Joose/Stable.js"></script>
+    
+        <link rel="stylesheet" type="text/css" href="/jsan/Task/ExtJS/resources/css/ext-all.css">
+    
+        <!-- Ext bridge  -->
+        
+        <script type="text/javascript" src="/jsan/Task/ExtJS/Adapter/Ext.js"></script>
+
+        <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
+        <script type="text/javascript" src="/jsan/JooseX/Bridge/Ext.js"></script>
+        <script type="text/javascript" src="/jsan/JooseX/Bridge/Ext/LazyConvertor.js"></script>
+        
+        <script type="text/javascript" src="/jsan/Task/ExtJS/All.js"></script>
+        
+        <!-- eof Ext bridge  -->
+        
+        
+        <script type="text/javascript" src="/jsan/ExtX/Reference/Slot.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/jsan/Test/Run/static/css/all.css">
+        <script type="text/javascript" src="/jsan/Task/Test/Run/ExtJS.js"></script>
+	</head>
+
+	
+	<body>
+		<script type="text/javascript">
+            var INC = []
+            Joose.A.each([ '../lib', '/jsan' ], function (path) {
+                INC.push(Test.Run.Harness.Browser.Multi.my.resolveUrl(path, true))
+            }) 
+		
+		
+			Test.Run.Harness.Browser.Multi.my.configure({
+				title : 'JiojuDB Test Suite',
+				
+				passThroughEx : true,
+				
+				preload : [
+				    '/jsan/Task/Joose/Core.js',
+                    "/jsan/JooseX/SimpleRequest.js",
+                    '/jsan/Task/JooseX/Namespace/Depended/Web.js',
+                    {
+                        text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(INC)
+                    }
+			    ]
+			})
+			
+			
+			Test.Run.Harness.Browser.Multi.my.start(
+				'010_sanity.t.js'
+			)
+		</script>
+	</body>
+</html>
