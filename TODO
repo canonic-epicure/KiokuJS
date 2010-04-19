@@ -1,9 +1,17 @@
-IDEAS
+TERMS
 =====
 
-add a script which will unpack the "seed" and run s/Module(.)Stub/New$1Module$1Name/ on it
+Collapsing  - reducing an object into DB entry
+Expanding   - the reverse of collapsing, DB Entry => Object
 
-add author name processing
+
+DESIGN DECISIONS
+================
+
+- Only store Joose instances, because how we can determine the meta-data for arbitrary JS class anyway? we need URL for module and class constructor to 'expand' the objects
+
+
+
 
 
 

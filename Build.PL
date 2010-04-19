@@ -5,7 +5,7 @@ name            JiojuDB
 version         0.01
 author          'Nickolay (SamuraiJack) Platonov <root@symbie.org>'
 
-abstract        'Persistent layer for Joose, targeting NoSQL backends'
+abstract        'Persistent layer for Joose, mostly targeting NoSQL backends'
 license         lgpl
 
 
