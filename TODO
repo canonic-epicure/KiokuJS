@@ -8,10 +8,14 @@ Expanding   - the reverse of collapsing, DB Entry => Object
 DESIGN DECISIONS
 ================
 
-- Only store Joose instances, because how we can determine the meta-data for arbitrary JS class anyway? we need URL for module and class constructor to 'expand' the objects
+- Only store Joose instances, because how we can determine the meta-data for arbitrary JS class anyway? we need class constructor to expand the objects (URL for module and/or name of class)
+    for example in the commonjs there is no even concept of class (?)
 
+- we need to store objects with traits correctly
 
+- system should be suitable for both client/server sides usage (no naive assumptions about the environment)
 
+- we'll have to pollute each and every object with unique __REF__ property, to track the object's relationships
 
 
 
