@@ -59,18 +59,19 @@ StartTest(function(t) {
                 
                 
                 {
-                    'Some.Another.Class' : new JiojuDB.TypeMap.Callbacks({
-                        
-                        intrinsic : true,
-                        
-                        collapse : function () {
-                            // do collapse
-                        },
+                    meta        : 'JiojuDB.TypeMap.Callbacks',
                     
-                        expand : function () {
-                            // do expand
-                        }
-                    })
+                    forClass    : 'Some.Another.Class',
+                    
+                    intrinsic : true,
+                    
+                    collapse : function () {
+                        // do collapse
+                    },
+                
+                    expand : function () {
+                        // do expand
+                    }
                 }
             ])
             
