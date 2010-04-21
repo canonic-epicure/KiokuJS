@@ -31,7 +31,7 @@ StartTest(function(t) {
                 {
                     meta        : 'JiojuDB.Resolver',
                     
-                    items       : [
+                    entries     : [
                         {
                             meta        : 'JiojuDB.TypeMap.Naive',
                             
@@ -41,7 +41,7 @@ StartTest(function(t) {
                         {
                             meta        : 'JiojuDB.Resolver',
                             
-                            items       : [
+                            entries     : [
                                 {
                                     meta        : 'JiojuDB.TypeMap.Naive',
                                     
@@ -111,17 +111,25 @@ StartTest(function(t) {
         marge.spouse = homer
         
         
-        var homerId = handler.store({
+        handler.store({
             'homerId' : homer
+        }).then(function (homerId) {
+            
+            ...
+            
         })
         
 
         //...
         
         
-        var kindaHomer = handler.lookUp('homerId')
+        handler.lookUp('homerId').then(function (kindaHomer) {
+            
+            kindaHomer === homer // true
+            
+        })
         
-        kindaHomer === homer // true
+        
         
         t.endAsync(async0)
     })
