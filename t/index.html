@@ -45,14 +45,15 @@
                     '/jsan/Task/JooseX/Namespace/Depended/Web.js',
                     {
                         text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(INC)
-                    }
+                    },
+                    'Task.JiojuDB.Core'
 			    ]
 			})
 			
 			
 			Test.Run.Harness.Browser.Multi.my.start(
 				'010_sanity.t.js',
-                '020_sanity2.t.js'
+                '040_serializer_json.t.js'
 			)
 		</script>
 	</body>
