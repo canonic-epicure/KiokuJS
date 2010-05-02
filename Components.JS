@@ -1,7 +1,10 @@
 COMPONENTS = {
     
     "Core" : [
-        "JiojuDB.Serializer.JSON"
+        "JiojuDB.Reference",
+        "JiojuDB.Serializer",
+        "JiojuDB.Serializer.JSON",
+        "JiojuDB.Serializer.JSPON"
     ]
     
 } 

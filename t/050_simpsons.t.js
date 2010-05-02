@@ -50,8 +50,9 @@ StartTest(function(t) {
         Bart.farther    = Lisa.farther  = Homer
         Bart.mother     = Lisa.mother   = Marge
         
-        Homer.children.push(Bart, Lisa)
-        Marge.children.push(Bart, Lisa)
+        var kids = [ Bart, Lisa ]
+        
+        Homer.children = Marge.children = kids
         
         
         var handler = new JiojuDB({
@@ -60,6 +61,8 @@ StartTest(function(t) {
         
         
         handler.store(Homer).then(function (homerID) {
+            
+            debugger
             
             var HomerCopy = handler.lookUp(homerID)
             
