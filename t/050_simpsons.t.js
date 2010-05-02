@@ -4,28 +4,17 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use('JiojuDB', function () {
+    use([ 'JiojuDB', 'Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
         t.ok(JiojuDB, "'JiojuDB' is here")
+        t.ok(Person, "'Person' is here")
+
         
-        
-        Class('Person', {
-            
-            has : {
-                name    : null,
-                
-                spouse  : null,
-                
-                farther : null,
-                mother  : null,
-                
-                children : Joose.I.Array
-            }
-        })
-        
+        //======================================================================================================================================================================================================================================================
+        t.diag('Graph setup')
         
         var Homer = new Person({
             name    : 'Homer Simpson'
@@ -54,10 +43,16 @@ StartTest(function(t) {
         
         Homer.children = Marge.children = kids
         
+
+        //======================================================================================================================================================================================================================================================
+        t.diag('Handler setup')
         
         var handler = new JiojuDB({
             backend : new JiojuDB.Backend.Hash()
         })
+        
+        
+        t.ok(handler, "JiojuDB handler was instantiated")
         
         
         handler.store(Homer).then(function (homerID) {
@@ -70,9 +65,7 @@ StartTest(function(t) {
             // HomerCopy.spouse === Marge
             // etc
             
-        })
-        
-        
-        t.endAsync(async0)
+            t.endAsync(async0)
+        }).now()
     })
 })    

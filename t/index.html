@@ -28,7 +28,7 @@
 	<body>
 		<script type="text/javascript">
             var INC = []
-            Joose.A.each([ '../lib', '/jsan' ], function (path) {
+            Joose.A.each([ 'lib', '../lib', '/jsan' ], function (path) {
                 INC.push(Test.Run.Harness.Browser.Multi.my.resolveUrl(path, true))
             }) 
 		
@@ -46,6 +46,9 @@
                     {
                         text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(INC)
                     },
+                    '/jsan/Task/JooseX/CPS/All.js',
+                    "/jsan/Data/UUID.js",
+                    "/jsan/Data/Visitor.js",
                     'Task.JiojuDB.Core'
 			    ]
 			})
@@ -54,7 +57,10 @@
 			Test.Run.Harness.Browser.Multi.my.start(
 				'010_sanity.t.js',
                 '020_serializer_json.t.js',
-                '021_serializer_jspon.t.js'
+                '021_serializer_jspon.t.js',
+                '030_resolver.t.js',
+                '040_backend_hash.t.js',
+                '050_simpsons.t.js'
 			)
 		</script>
 	</body>
