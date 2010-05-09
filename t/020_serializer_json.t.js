@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(14)
+	t.plan(16)
     
     var async0 = t.beginAsync()
     
@@ -26,6 +26,9 @@ StartTest(function(t) {
         
         t.ok(serializer.serialize(2)    === "2", 'Number value serialized ok #1')
         t.ok(serializer.serialize(4.5)  === "4.5", 'Number value serialized ok #2')
+        
+        t.ok(serializer.serialize(null)  === "null", '`null` value serialized ok')
+        t.ok(serializer.serialize(undefined)  === "undefined", '`undefined` value serialized ok')
         
         
         //======================================================================================================================================================================================================================================================
