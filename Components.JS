@@ -23,6 +23,7 @@ COMPONENTS = {
         "JiojuDB.Node",
         "JiojuDB.Collapser",
         
+        "JiojuDB.LiveObjects.Scope",
         "JiojuDB.LiveObjects",
         "JiojuDB"
     ]
