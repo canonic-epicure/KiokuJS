@@ -1,4 +1,4 @@
-Class('TypeMap.Intrinsic', {
+Class('TypeMap.ValueWrapper', {
     
     isa     : 'JiojuDB.TypeMap.Joose',
     
