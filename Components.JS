@@ -4,7 +4,6 @@ COMPONENTS = {
         "JiojuDB.Reference",
         "JiojuDB.Serializer",
         "JiojuDB.Serializer.JSON",
-        "JiojuDB.Serializer.JSPON",
         
         "JiojuDB.TypeMap",
         "JiojuDB.TypeMap.Feature.NoDeps",
@@ -15,10 +14,12 @@ COMPONENTS = {
         "JiojuDB.Resolver",
         "JiojuDB.Resolver.Standard",
         
+        "JiojuDB.Collapser.Inliner",
+        "JiojuDB.Collapser.Inliner.JSPON",
+        
         "JiojuDB.Backend",
         "JiojuDB.Backend.Hash",
         
-        "JiojuDB.Collapser.Inliner",
         "JiojuDB.Node",
         "JiojuDB.Collapser",
         
