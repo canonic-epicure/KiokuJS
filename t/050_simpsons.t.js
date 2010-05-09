@@ -57,7 +57,7 @@ StartTest(function(t) {
         
         handler.store(Homer).then(function (homerID) {
             
-            debugger
+//            debugger
             
             var HomerCopy = handler.lookUp(homerID)
             
