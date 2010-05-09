@@ -111,7 +111,9 @@ StartTest(function(t) {
         marge.spouse = homer
         
         
-        handler.store({
+        var scope = handler.newScope()
+        
+        scope.store({
             'homerId' : homer
         }).then(function (homerId) {
             
@@ -123,7 +125,7 @@ StartTest(function(t) {
         //...
         
         
-        handler.lookUp('homerId').then(function (kindaHomer) {
+        scope.lookUp('homerId').then(function (kindaHomer) {
             
             kindaHomer === homer // true
             

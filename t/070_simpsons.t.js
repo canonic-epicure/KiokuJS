@@ -47,15 +47,17 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Handler setup')
         
-        var handler = new JiojuDB({
+        var DB = new JiojuDB({
             backend : new JiojuDB.Backend.Hash()
         })
         
+        t.ok(DB, "JiojuDB handler was instantiated")
         
-        t.ok(handler, "JiojuDB handler was instantiated")
+        
+        var scope = DB.newScope()
         
         
-        handler.store(Homer).then(function (homerID) {
+        scope.store(Homer).then(function (homerID) {
             
             debugger
             
