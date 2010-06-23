@@ -4,23 +4,23 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use('JiojuDB', function () {
+    use('KiokuJS', function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
 	
         
-        var handler = new JiojuDB({
+        var handler = new KiokuJS({
             
-            backend     : new JiojuDB.Backend.CouchDB({
+            backend     : new KiokuJS.Backend.CouchDB({
                 url     : 'http://couchdb.org'
             }),
             
             
-            resolver    : new JiojuDB.Resolver([
-                {                                                          |   new JiojuDB.TypeMap.Naive({
-                    meta        : 'JiojuDB.TypeMap.Naive',                 |       forClass    : 'Some.Class',
+            resolver    : new KiokuJS.Resolver([
+                {                                                          |   new KiokuJS.TypeMap.Naive({
+                    meta        : 'KiokuJS.TypeMap.Naive',                 |       forClass    : 'Some.Class',
                                                                            |       
                     forClass    : 'Some.Class',                            |       inherit     : true,
                                                                            |       intrinsic   : true
@@ -29,26 +29,26 @@ StartTest(function(t) {
                 },
                 
                 {
-                    meta        : 'JiojuDB.Resolver',
+                    meta        : 'KiokuJS.Resolver',
                     
                     entries     : [
                         {
-                            meta        : 'JiojuDB.TypeMap.Naive',
+                            meta        : 'KiokuJS.TypeMap.Naive',
                             
                             forClass    : 'Some.Override'
                         },
                         
                         {
-                            meta        : 'JiojuDB.Resolver',
+                            meta        : 'KiokuJS.Resolver',
                             
                             entries     : [
                                 {
-                                    meta        : 'JiojuDB.TypeMap.Naive',
+                                    meta        : 'KiokuJS.TypeMap.Naive',
                                     
                                     forClass    : 'Some.Override'
                                 },
                                 {
-                                    meta        : 'JiojuDB.TypeMap.Naive',
+                                    meta        : 'KiokuJS.TypeMap.Naive',
                                     
                                     forClass    : 'Yet.Another.Class'
                                 }
@@ -59,7 +59,7 @@ StartTest(function(t) {
                 
                 
                 {
-                    meta        : 'JiojuDB.TypeMap.Callbacks',
+                    meta        : 'KiokuJS.TypeMap.Callbacks',
                     
                     forClass    : 'Some.Another.Class',
                     

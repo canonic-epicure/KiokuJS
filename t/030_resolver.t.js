@@ -4,18 +4,18 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'JiojuDB.Resolver.Standard', 'TypeMap.Person' ], function () {
+    use([ 'KiokuJS.Resolver.Standard', 'TypeMap.Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB.Resolver.Standard, "JiojuDB.Resolver.Standard is here")
+        t.ok(KiokuJS.Resolver.Standard, "KiokuJS.Resolver.Standard is here")
         t.ok(TypeMap.Person, "TypeMap.Person is here")
         
         
-        var resolver = new JiojuDB.Resolver.Standard()
+        var resolver = new KiokuJS.Resolver.Standard()
         
-        t.ok(resolver, "JiojuDB.Resolver.Standard was instantiated")
+        t.ok(resolver, "KiokuJS.Resolver.Standard was instantiated")
         
 
         //======================================================================================================================================================================================================================================================
@@ -23,7 +23,7 @@ StartTest(function(t) {
         
         var arrayTypeMap = resolver.resolveSingle('Array')
         
-        t.ok(arrayTypeMap instanceof JiojuDB.TypeMap.Array, 'Correct typeMap resolved #1')
+        t.ok(arrayTypeMap instanceof KiokuJS.TypeMap.Array, 'Correct typeMap resolved #1')
 
         
         //======================================================================================================================================================================================================================================================
@@ -31,7 +31,7 @@ StartTest(function(t) {
         
         var objectTypeMap = resolver.resolveSingle('Object')
         
-        t.ok(objectTypeMap instanceof JiojuDB.TypeMap.Object, 'Correct typeMap resolved #2')
+        t.ok(objectTypeMap instanceof KiokuJS.TypeMap.Object, 'Correct typeMap resolved #2')
         
         
         //======================================================================================================================================================================================================================================================
@@ -42,12 +42,12 @@ StartTest(function(t) {
         
         var objectTypeMap = resolver.resolveSingle('Some.Class')
         
-        t.ok(objectTypeMap instanceof JiojuDB.TypeMap.Joose, 'Correct typeMap resolved #3')
+        t.ok(objectTypeMap instanceof KiokuJS.TypeMap.Joose, 'Correct typeMap resolved #3')
 
         
         var objectTypeMap = resolver.resolveSingle('Another.Class')
         
-        t.ok(objectTypeMap instanceof JiojuDB.TypeMap.Joose, 'Correct typeMap resolved #4')
+        t.ok(objectTypeMap instanceof KiokuJS.TypeMap.Joose, 'Correct typeMap resolved #4')
         
         
         //======================================================================================================================================================================================================================================================
@@ -56,7 +56,7 @@ StartTest(function(t) {
         
         t.ok(typeof Person == 'undefined', "Class 'Person' isn't loaded yet")
         
-        resolver = new JiojuDB.Resolver.Standard([
+        resolver = new KiokuJS.Resolver.Standard([
             {
                 meta : TypeMap.Person
             }

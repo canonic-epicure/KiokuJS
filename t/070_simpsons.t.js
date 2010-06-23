@@ -4,12 +4,12 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'JiojuDB', 'Person' ], function () {
+    use([ 'KiokuJS', 'Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB, "'JiojuDB' is here")
+        t.ok(KiokuJS, "'KiokuJS' is here")
         t.ok(Person, "'Person' is here")
 
         
@@ -47,11 +47,11 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Handler setup')
         
-        var DB = new JiojuDB({
-            backend : new JiojuDB.Backend.Hash()
+        var DB = new KiokuJS({
+            backend : new KiokuJS.Backend.Hash()
         })
         
-        t.ok(DB, "JiojuDB handler was instantiated")
+        t.ok(DB, "KiokuJS handler was instantiated")
         
         
         var scope = DB.newScope()

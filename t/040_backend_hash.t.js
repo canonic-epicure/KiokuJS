@@ -4,17 +4,17 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'JiojuDB.Backend.Hash' ], function () {
+    use([ 'KiokuJS.Backend.Hash' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB.Backend.Hash, "JiojuDB.Backend.Hash is here")
+        t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
         
         
-        var backend = new JiojuDB.Backend.Hash()
+        var backend = new KiokuJS.Backend.Hash()
         
-        t.ok(backend, "JiojuDB.Backend.Hash was instantiated")
+        t.ok(backend, "KiokuJS.Backend.Hash was instantiated")
         
         
         //======================================================================================================================================================================================================================================================

@@ -1,6 +1,6 @@
-Role('JiojuDB.Role.UUID.Serial', {
+Role('KiokuJS.Role.UUID.Serial', {
 
-    use : 'JiojuDB.Role.UUID',
+    use : 'KiokuJS.Role.UUID',
     
 
 body : function () {
@@ -10,7 +10,7 @@ body : function () {
 
     this.meta.extend({
         
-        does : JiojuDB.Role.UUID,
+        does : KiokuJS.Role.UUID,
         
         
         methods : {

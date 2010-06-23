@@ -4,14 +4,14 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use('JiojuDB.Serializer.JSON', function () {
+    use('KiokuJS.Serializer.JSON', function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB.Serializer.JSON, "JiojuDB.Serializer.JSON is here")
+        t.ok(KiokuJS.Serializer.JSON, "KiokuJS.Serializer.JSON is here")
 
-        var serializer = new JiojuDB.Serializer.JSON()
+        var serializer = new KiokuJS.Serializer.JSON()
         
         
         //======================================================================================================================================================================================================================================================

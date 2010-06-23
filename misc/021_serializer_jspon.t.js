@@ -4,25 +4,25 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use('JiojuDB.Serializer.JSPON', function () {
+    use('KiokuJS.Serializer.JSPON', function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB.Serializer.JSPON, "JiojuDB.Serializer.JSPON is here")
+        t.ok(KiokuJS.Serializer.JSPON, "KiokuJS.Serializer.JSPON is here")
 
-        var serializer = new JiojuDB.Serializer.JSPON()
+        var serializer = new KiokuJS.Serializer.JSPON()
         
         
         //======================================================================================================================================================================================================================================================
         t.diag('Objects with references')
         
-        t.ok(serializer.serialize(new JiojuDB.Reference({ ID : 1 })) == '{"$ref":1}', 'Simple reference serialized ok')
+        t.ok(serializer.serialize(new KiokuJS.Reference({ ID : 1 })) == '{"$ref":1}', 'Simple reference serialized ok')
         
         t.ok(serializer.serialize({
             
-            foo : new JiojuDB.Reference({ ID : 2 }), 
-            bar : [ new JiojuDB.Reference({ ID : 3 }), 'zab' ]
+            foo : new KiokuJS.Reference({ ID : 2 }), 
+            bar : [ new KiokuJS.Reference({ ID : 3 }), 'zab' ]
             
         }) == '{"foo":{"$ref":2},"bar":[{"$ref":3},"zab"]}', 'Nested references serialized ok')
         

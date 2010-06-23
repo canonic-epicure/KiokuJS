@@ -4,12 +4,12 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use('JiojuDB', function () {
+    use('KiokuJS', function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB, "JiojuDB is here")
+        t.ok(KiokuJS, "KiokuJS is here")
         
         t.endAsync(async0)
     })

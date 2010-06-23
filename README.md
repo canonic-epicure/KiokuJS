@@ -2,17 +2,17 @@ Name
 ====
 
 
-JiojuDB - Some clever yet compact description
+KiokuJS - Some clever yet compact description
 
 
 SYNOPSIS
 ========
 
-        Class("JiojuDB", {
+        Class("KiokuJS", {
         
         })
         
-        var instance = new JiojuDB({
+        var instance = new KiokuJS({
         })
         
 
@@ -20,7 +20,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-`JiojuDB` is a stub for JSAN modules.
+`KiokuJS` is a stub for JSAN modules.
 
 
 
@@ -31,7 +31,7 @@ EXAMPLES
 GETTING HELP
 ============
 
-This extension is supported via github issues tracker: <http://github.com/SamuraiJack/JiojuDB/issues>
+This extension is supported via github issues tracker: <http://github.com/SamuraiJack/KiokuJS/issues>
 
 For general Joose questions you can also visit #joose on irc.freenode.org or the forum at: <http://joose.it/forum>
  
@@ -40,7 +40,7 @@ For general Joose questions you can also visit #joose on irc.freenode.org or the
 SEE ALSO
 ========
 
-Web page of this module: <http://github.com/SamuraiJack/JiojuDB/>
+Web page of this module: <http://github.com/SamuraiJack/KiokuJS/>
 
 General documentation for Joose: <http://openjsan.org/go/?l=Joose>
 
@@ -50,7 +50,7 @@ BUGS
 
 All complex software has bugs lurking in it, and this module is no exception.
 
-Please report any bugs through the web interface at <http://github.com/SamuraiJack/JiojuDB/issues>
+Please report any bugs through the web interface at <http://github.com/SamuraiJack/KiokuJS/issues>
 
 
 

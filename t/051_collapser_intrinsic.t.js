@@ -4,13 +4,13 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'JiojuDB', 'JiojuDB.Backend.Hash', 'ValueWrapper', 'TypeMap.ValueWrapper' ], function () {
+    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'ValueWrapper', 'TypeMap.ValueWrapper' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB,               "'JiojuDB' is here")
-        t.ok(JiojuDB.Collapser,     "'JiojuDB.Collapser' is here")
+        t.ok(KiokuJS,               "'KiokuJS' is here")
+        t.ok(KiokuJS.Collapser,     "'KiokuJS.Collapser' is here")
         t.ok(ValueWrapper,          "'ValueWrapper' is here")
         t.ok(TypeMap.ValueWrapper,  "'TypeMap.ValueWrapper' is here")
 
@@ -31,10 +31,10 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Collapser setup')
         
-        var backend     = new JiojuDB.Backend.Hash()
+        var backend     = new KiokuJS.Backend.Hash()
         
-        var collapser = new JiojuDB.Collapser({
-            resolver            : new JiojuDB.Resolver.Standard([
+        var collapser = new KiokuJS.Collapser({
+            resolver            : new KiokuJS.Resolver.Standard([
                 {
                     meta : 'TypeMap.ValueWrapper'
                 }
@@ -42,7 +42,7 @@ StartTest(function(t) {
             inliner             : backend.inliner
         })
         
-        t.ok(collapser, "JiojuDB collapser was instantiated")
+        t.ok(collapser, "KiokuJS collapser was instantiated")
         
 
         //======================================================================================================================================================================================================================================================

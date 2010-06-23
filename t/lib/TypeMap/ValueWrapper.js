@@ -1,6 +1,6 @@
 Class('TypeMap.ValueWrapper', {
     
-    isa     : 'JiojuDB.TypeMap.Joose',
+    isa     : 'KiokuJS.TypeMap.Joose',
     
     
     has : {

@@ -1,10 +1,10 @@
-The installation procedure for JiojuDB
+The installation procedure for KiokuJS
 
 
 JSAN
 ====
 
-`JiojuDB` is distributing via JSAN - [JavaScript Archive Network][jsan]. To install `JiojuDB` you'll need to install JSAN shell first - a small,
+`KiokuJS` is distributing via JSAN - [JavaScript Archive Network][jsan]. To install `KiokuJS` you'll need to install JSAN shell first - a small,
 cross-platform, unix-shell-like program. It communicate directly with closest JSAN mirror and can download and install any JSAN module for you.
 
 JSAN shell is written in perl, so the 1st step is to obtain Perl.
@@ -37,7 +37,7 @@ Launch a console (`cmd` on Windows). Then type:
 Thats all, now wait until shell will be installed. You may be asked about installing its pre-requisites - answer 'yes'. 
 
 
-3. INSTALLING `JiojuDB`
+3. INSTALLING `KiokuJS`
 ==========================
 
 Launch a console (`cmd` on Windows). Then type:
@@ -61,9 +61,9 @@ If this is the first time you installing the JSAN module, setup the installation
 
 Then, type:
         
-        jsan> install JiojuDB
+        jsan> install KiokuJS
 
-Thats all, shell will download and install `JiojuDB` for you. 
+Thats all, shell will download and install `KiokuJS` for you. 
 
 For the list of available commands, try `help`. Also refer to [JSAN::Shell documentation](http://search.cpan.org/dist/JSAN-Shell/lib/JSAN/Shell.pm) for details. 
 
@@ -71,7 +71,7 @@ For the list of available commands, try `help`. Also refer to [JSAN::Shell docum
 4. CONFIGURING YOUR SYSTEM
 ==========================
 
-After successful completion of the procedure above, `JiojuDB` will be installed in your local JavaScript library (you've specified its location with 'prefix').
+After successful completion of the procedure above, `KiokuJS` will be installed in your local JavaScript library (you've specified its location with 'prefix').
 
 For example, the path to the library can be:
 

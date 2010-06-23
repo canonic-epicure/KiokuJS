@@ -4,13 +4,13 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'JiojuDB', 'JiojuDB.Backend.Hash', 'Person' ], function () {
+    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(JiojuDB,               "'JiojuDB' is here")
-        t.ok(JiojuDB.Collapser,     "'JiojuDB.Collapser' is here")
+        t.ok(KiokuJS,               "'KiokuJS' is here")
+        t.ok(KiokuJS.Collapser,     "'KiokuJS.Collapser' is here")
         t.ok(Person,                "'Person' is here")
 
         
@@ -48,14 +48,14 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Collapser setup')
         
-        var backend     = new JiojuDB.Backend.Hash()
+        var backend     = new KiokuJS.Backend.Hash()
         
-        var collapser = new JiojuDB.Collapser({
-            resolver            : new JiojuDB.Resolver.Standard(),
+        var collapser = new KiokuJS.Collapser({
+            resolver            : new KiokuJS.Resolver.Standard(),
             inliner             : backend.inliner
         })
         
-        t.ok(collapser, "JiojuDB collapser was instantiated")
+        t.ok(collapser, "KiokuJS collapser was instantiated")
         
 
         //======================================================================================================================================================================================================================================================
@@ -160,8 +160,8 @@ StartTest(function(t) {
         Marge.children = [ Bart, Lisa ]
         
         
-        var collapser = new JiojuDB.Collapser({
-            resolver            : new JiojuDB.Resolver.Standard(),
+        var collapser = new KiokuJS.Collapser({
+            resolver            : new KiokuJS.Resolver.Standard(),
             inliner             : backend.inliner
         })
         

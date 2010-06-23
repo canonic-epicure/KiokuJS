@@ -1,4 +1,4 @@
-Role('JiojuDB.Role.UUID', {
+Role('KiokuJS.Role.UUID', {
     
     use : [ 'Data.UUID' ],
     

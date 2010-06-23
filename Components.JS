@@ -1,30 +1,30 @@
 COMPONENTS = {
     
     "Core" : [
-        "JiojuDB.Reference",
-        "JiojuDB.Serializer",
-        "JiojuDB.Serializer.JSON",
+        "KiokuJS.Reference",
+        "KiokuJS.Serializer",
+        "KiokuJS.Serializer.JSON",
         
-        "JiojuDB.TypeMap",
-        "JiojuDB.TypeMap.Feature.NoDeps",
-        "JiojuDB.TypeMap.Array",
-        "JiojuDB.TypeMap.Object",
-        "JiojuDB.TypeMap.Joose",
+        "KiokuJS.TypeMap",
+        "KiokuJS.TypeMap.Feature.NoDeps",
+        "KiokuJS.TypeMap.Array",
+        "KiokuJS.TypeMap.Object",
+        "KiokuJS.TypeMap.Joose",
         
-        "JiojuDB.Resolver",
-        "JiojuDB.Resolver.Standard",
+        "KiokuJS.Resolver",
+        "KiokuJS.Resolver.Standard",
         
-        "JiojuDB.Collapser.Inliner",
-        "JiojuDB.Collapser.Inliner.JSPON",
+        "KiokuJS.Collapser.Inliner",
+        "KiokuJS.Collapser.Inliner.JSPON",
         
-        "JiojuDB.Backend",
-        "JiojuDB.Backend.Hash",
+        "KiokuJS.Backend",
+        "KiokuJS.Backend.Hash",
         
-        "JiojuDB.Node",
-        "JiojuDB.Collapser",
+        "KiokuJS.Node",
+        "KiokuJS.Collapser",
         
-        "JiojuDB.Scope",
-        "JiojuDB"
+        "KiokuJS.Scope",
+        "KiokuJS"
     ]
     
 } 

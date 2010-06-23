@@ -1,6 +1,6 @@
 Class('TypeMap.Person', {
     
-    isa     : 'JiojuDB.TypeMap.Joose',
+    isa     : 'KiokuJS.TypeMap.Joose',
     
     
     has : {
@@ -12,7 +12,7 @@ Class('TypeMap.Person', {
     methods : {
         
 //        acquireIDFor : function (instance, desiredId) {
-//            if (instance.meta.does('JiojuDB.Feature.OwnID')) return instance.acquireID(desiredId)
+//            if (instance.meta.does('KiokuJS.Feature.OwnID')) return instance.acquireID(desiredId)
 //            
 //            return this.SUPER(instance, desiredId)
 //        },
