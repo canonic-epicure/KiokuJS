@@ -26,6 +26,5 @@ COMPONENTS = {
         "KiokuJS.Scope",
         "KiokuJS"
     ]
-    
 } 
 
