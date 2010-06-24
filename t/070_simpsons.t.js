@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(1)
+	t.plan(3)
     
     var async0 = t.beginAsync()
     
@@ -54,14 +54,14 @@ StartTest(function(t) {
         t.ok(DB, "KiokuJS handler was instantiated")
         
         
-        var scope = DB.newScope()
+        var scope = DB.root()
         
         
         scope.store(Homer).then(function (homerID) {
             
             debugger
             
-            var HomerCopy = handler.lookUp(homerID)
+            var HomerCopy = scope.lookUp(homerID)
             
             // HomerCopy === Homer
             // HomerCopy.spouse === Marge
