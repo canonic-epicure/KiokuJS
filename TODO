@@ -1,8 +1,9 @@
 TASKS
 =====
 
+- harmonize approach to Data.Visitor subclassing across whole system
  
-
+- speed up Data.Visitor as much as possible (remove too details visits, like object key, etc)
 
 DONE
 ====

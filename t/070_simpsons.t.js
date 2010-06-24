@@ -59,15 +59,13 @@ StartTest(function(t) {
         
         scope.store(Homer).then(function (homerID) {
             
-            debugger
-            
-            var HomerCopy = scope.lookUp(homerID)
-            
-            // HomerCopy === Homer
-            // HomerCopy.spouse === Marge
-            // etc
-            
-            t.endAsync(async0)
+            scope.lookUp(homerID).then(function (HomerCopy) {
+                
+                t.ok(HomerCopy === Homer, 'Retrieved the Homer object from live objects')
+                
+                
+                t.endAsync(async0)
+            }).now()
         }).now()
     })
 })    

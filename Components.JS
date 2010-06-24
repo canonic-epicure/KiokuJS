@@ -17,11 +17,15 @@ COMPONENTS = {
         "KiokuJS.Collapser.Inliner",
         "KiokuJS.Collapser.Inliner.JSPON",
         
+        "KiokuJS.Linker.Outliner.JSPON",
+        
         "KiokuJS.Backend",
         "KiokuJS.Backend.Hash",
         
         "KiokuJS.Node",
+        
         "KiokuJS.Collapser",
+        "KiokuJS.Linker",
         
         "KiokuJS.Scope",
         "KiokuJS"
