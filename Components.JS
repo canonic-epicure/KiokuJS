@@ -6,7 +6,7 @@ COMPONENTS = {
         "KiokuJS.Serializer.JSON",
         
         "KiokuJS.TypeMap",
-        "KiokuJS.TypeMap.Feature.NoDeps",
+        "KiokuJS.TypeMap.Role.NoDeps",
         "KiokuJS.TypeMap.Array",
         "KiokuJS.TypeMap.Object",
         "KiokuJS.TypeMap.Joose",
