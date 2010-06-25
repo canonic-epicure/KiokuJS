@@ -15,14 +15,13 @@ COMPONENTS = {
         "KiokuJS.Resolver.Standard",
         
         "KiokuJS.Collapser.Inliner",
-        "KiokuJS.Collapser.Inliner.JSPON",
         
-        "KiokuJS.Linker.Outliner.JSPON",
+        "KiokuJS.Linker.Gatherer",
+        
+        "KiokuJS.Node",
         
         "KiokuJS.Backend",
         "KiokuJS.Backend.Hash",
-        
-        "KiokuJS.Node",
         
         "KiokuJS.Collapser",
         "KiokuJS.Linker",
