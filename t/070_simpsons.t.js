@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(14)
+	t.plan(16)
     
     var async0 = t.beginAsync()
     
@@ -59,47 +59,53 @@ StartTest(function(t) {
         
         scope.store(Homer).then(function (homerID) {
             
-            scope.lookUp(homerID).then(function (homerCopy) {
+            scope.lookUp(homerID).then(function (homer2) {
                 
                 //======================================================================================================================================================================================================================================================
                 t.diag('Retrieving live object')
                 
                 
-                t.ok(homerCopy === Homer, 'Retrieved the Homer object from live objects')
+                t.ok(homer2 === Homer, 'Retrieved the Homer object from live objects')
                 
                 
                 var newScope = DB.newScope()
                 
-                newScope.lookUp(homerID).then(function (homerCopy2) {
+                newScope.lookUp(homerID).then(function (homer3) {
                     
                     //======================================================================================================================================================================================================================================================
                     t.diag('Retrieving from backend')
                 
                     
-                    t.ok(homerCopy2 !== Homer, 'Retrieved Homer is another instance already')
+                    t.ok(homer3 !== Homer, 'Retrieved Homer is another instance already')
                     
-                    t.ok(homerCopy2.name == 'Homer Simpson', 'But it has a correct name')
-                    
-                    
-                    var margeCopy2 = homerCopy2.spouse
-                    
-                    t.ok(margeCopy2 instanceof Person, 'Marge2 isa Person')
-                    t.ok(margeCopy2.name == 'Marge Simpson', 'Marge has a correct name')
-                    
-                    t.ok(margeCopy2.spouse === homerCopy2, 'Marge2&Homer2 are spouses')
-                    
-                    t.ok(margeCopy2.children === homerCopy2.children, 'Marge2&Homer2 have correct kids')
+                    t.ok(homer3.name == 'Homer Simpson', 'But it has a correct name')
                     
                     
+                    var marge3 = homer3.spouse
                     
-                    var kids = margeCopy2.children
+                    t.ok(marge3 instanceof Person, 'Marge2 isa Person')
+                    t.ok(marge3.name == 'Marge Simpson', 'Marge has a correct name')
+                    
+                    t.ok(marge3.spouse === homer3, 'Marge2&Homer2 are spouses')
+                    
+                    t.ok(marge3.children === homer3.children, 'Marge2&Homer2 have correct kids')
+                    
+                    
+                    
+                    var kids = marge3.children
                     
                     t.ok(kids.length == 2, 'we forgot Maggy..')
                     
                     t.ok((kids[0] instanceof Person) && (kids[1] instanceof Person), 'Both kids are Persons')
                     
-                    t.ok(kids[0].name == 'Bart Simpson', 'First kid in array is Bart')
-                    t.ok(kids[1].name == 'Lisa Simpson', 'Second kid in array is Lisa')
+                    var bart3 = kids[0]
+                    var lisa3 = kids[1]
+                    
+                    t.ok(bart3.name == 'Bart Simpson', 'First kid in array is Bart')
+                    t.ok(lisa3.name == 'Lisa Simpson', 'Second kid in array is Lisa')
+                    
+                    t.ok(bart3.farther == homer3 && bart3.mother == marge3, 'Bart3 has correct parents')
+                    t.ok(lisa3.farther == homer3 && lisa3.mother == marge3, 'Bart3 has correct parents')
                     
                     
                     t.endAsync(async0)
