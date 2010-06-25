@@ -1,8 +1,8 @@
 TERMS
 =====
 
-Collapsing  - reducing an object into DB entry
-Expanding   - the reverse of collapsing, DB Entry => Object
+Collapsing      - reducing an object into DB entry
+Linking         - the reverse of collapsing, DB Entry => Object
 
 
 DESIGN DECISIONS

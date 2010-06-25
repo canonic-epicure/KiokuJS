@@ -17,6 +17,7 @@ COMPONENTS = {
         "KiokuJS.Collapser.Inliner",
         
         "KiokuJS.Linker.Gatherer",
+        "KiokuJS.Linker.Expander",
         
         "KiokuJS.Node",
         
