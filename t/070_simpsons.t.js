@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(3)
+	t.plan(4)
     
     var async0 = t.beginAsync()
     

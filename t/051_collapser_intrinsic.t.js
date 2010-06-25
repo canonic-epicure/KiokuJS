@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(1)
+	t.plan(17)
     
     var async0 = t.beginAsync()
     
@@ -39,7 +39,7 @@ StartTest(function(t) {
                     meta : 'TypeMap.ValueWrapper'
                 }
             ]),
-            inliner             : backend.inliner
+            backend             : backend
         })
         
         t.ok(collapser, "KiokuJS collapser was instantiated")
@@ -76,13 +76,13 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
         var graphEntry       = graphNode.getEntry()
-        var graphData        = graphEntry.data
+        var graphData        = graphEntry.entry
         
         t.ok(graphEntry.className == 'Object', 'Entry has correct `className`')
         
         
         var arrayEntry       = arrayNode.getEntry()
-        var arrayData        = arrayEntry.data
+        var arrayData        = arrayEntry.entry
         
         t.ok(arrayEntry.className == 'Array', 'Entry has correct `className`')
 
@@ -93,7 +93,7 @@ StartTest(function(t) {
         var intrinsicEntry = arrayData[1]
         
         t.ok(intrinsicEntry.className == 'ValueWrapper', 'Entry has correct `className`')
-        t.ok(intrinsicEntry.data.value == 'someValue', 'Entry has correct `data`')
+        t.ok(intrinsicEntry.entry.value == 'someValue', 'Entry has correct `data`')
         
         
         t.endAsync(async0)

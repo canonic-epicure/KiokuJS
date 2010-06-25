@@ -52,7 +52,7 @@ StartTest(function(t) {
         
         var collapser = new KiokuJS.Collapser({
             resolver            : new KiokuJS.Resolver.Standard(),
-            inliner             : backend.inliner
+            backend             : backend
         })
         
         t.ok(collapser, "KiokuJS collapser was instantiated")
@@ -101,7 +101,7 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
         var entry       = homerNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         t.ok(entry.ID == homerNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'Person', 'Entry has correct `className`')
@@ -112,7 +112,7 @@ StartTest(function(t) {
         
         
         var entry       = margeNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         t.ok(entry.ID == margeNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'Person', 'Entry has correct `className`')
@@ -123,7 +123,7 @@ StartTest(function(t) {
         
 
         var entry       = kidsNode1.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         t.ok(entry.ID == kidsNode1.ID, 'Entry has correct ID')
         t.ok(entry.className == 'Array', 'Entry has correct `className`')
@@ -133,7 +133,7 @@ StartTest(function(t) {
         
         
         var entry       = bartNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         t.ok(entry.ID == bartNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'Person', 'Entry has correct `className`')
@@ -143,7 +143,7 @@ StartTest(function(t) {
 
         
         var entry       = lisaNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         t.ok(entry.ID == lisaNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'Person', 'Entry has correct `className`')
@@ -162,7 +162,7 @@ StartTest(function(t) {
         
         var collapser = new KiokuJS.Collapser({
             resolver            : new KiokuJS.Resolver.Standard(),
-            inliner             : backend.inliner
+            backend             : backend
         })
         
         
@@ -214,23 +214,23 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
         var entry       = homerNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         
         t.ok(data.children.className == 'Array', 'Entry has correct intrinsic `children` entry')
         
-        t.ok(data.children.data[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
-        t.ok(data.children.data[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
+        t.ok(data.children.entry[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
+        t.ok(data.children.entry[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
         
 
         var entry       = margeNode.getEntry()
-        var data        = entry.data
+        var data        = entry.entry
         
         
         t.ok(data.children.className == 'Array', 'Entry has correct intrinsic `children` entry')
         
-        t.ok(data.children.data[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
-        t.ok(data.children.data[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
+        t.ok(data.children.entry[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
+        t.ok(data.children.entry[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
         
         
         t.endAsync(async0)

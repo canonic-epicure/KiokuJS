@@ -10,6 +10,7 @@ StartTest(function(t) {
         t.diag('Sanity')
         
         t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
+        t.ok(KiokuJS.Node, "KiokuJS.Node is here")
         
         
         var backend = new KiokuJS.Backend.Hash()
@@ -24,8 +25,27 @@ StartTest(function(t) {
         
         backend.insert([
         
-            { ID : 1, data : { foo : "foo1" } },
-            { ID : 2, data : { bar : "foo2" } }
+            new KiokuJS.Node({ 
+                ID          : 1,
+                
+                typeMap     : 'stub',
+                className   : 'Object',
+                
+                backend     : backend,
+                
+                data        : { foo : "foo1" } 
+            }),
+            
+            new KiokuJS.Node({ 
+                ID : 2, 
+                
+                typeMap     : 'stub',
+                className   : 'Object',
+                
+                backend     : backend,
+                
+                data        : { bar : "foo2" } 
+            })
             
         ]).then(function () {
             
@@ -44,8 +64,8 @@ StartTest(function(t) {
                 
                 backend.get([ 2 , 1, 10 ]).then(function (res) {
                 
-                    t.ok(res[0].data.bar == 'foo2', 'Entry with ID = 2, retrieved correctly')
-                    t.ok(res[1].data.foo == 'foo1', 'Entry with ID = 1, retrieved correctly')
+                    t.ok(res[0].entry.bar == 'foo2', 'Entry with ID = 2, retrieved correctly')
+                    t.ok(res[1].entry.foo == 'foo1', 'Entry with ID = 1, retrieved correctly')
                     t.ok(res[2] == null, 'There is no entry with ID = 10')
 
                     
