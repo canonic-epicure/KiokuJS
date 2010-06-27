@@ -16,7 +16,8 @@ StartTest(function(t) {
         Class('Some.Class', {
             
             has : {
-                ref    : null
+                $ref    : null,
+                $entry  : null
             }
         })
 
@@ -27,7 +28,8 @@ StartTest(function(t) {
         
         var instance = new Some.Class()
         
-        instance.ref = instance
+        instance.$ref   = instance
+        instance.$entry = '123'
         
         
         //======================================================================================================================================================================================================================================================
@@ -65,9 +67,11 @@ StartTest(function(t) {
         t.ok(object, 'Something was expanded into objects')
         
         t.ok(object instanceof Some.Class, "And its an instance of correct class")
-        t.ok(object != instance, 'Its a different, newly created instance')
-        t.ok(object.ref == object, 'And it has a correct self-referencing attribute')
         
+        
+        t.ok(object != instance, 'Its a different, newly created instance')
+        t.ok(object.$ref == object, 'And it has a correct self-referencing attribute (in `$ref` attributes)')
+        t.ok(object.$entry == '123', 'And it has a correct value for `$entry` property')
         
         t.endAsync(async0)
     })

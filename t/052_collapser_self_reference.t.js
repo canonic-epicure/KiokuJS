@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(8)
+	t.plan(9)
     
     var async0 = t.beginAsync()
     
@@ -16,7 +16,8 @@ StartTest(function(t) {
         Class('Some.Class', {
             
             has : {
-                ref    : null
+                $ref    : null,
+                $entry  : null
             }
         })
 
@@ -26,7 +27,8 @@ StartTest(function(t) {
         
         var instance = new Some.Class()
         
-        instance.ref = instance
+        instance.$ref   = instance
+        instance.$entry = '123'
         
         
         //======================================================================================================================================================================================================================================================
@@ -48,7 +50,7 @@ StartTest(function(t) {
         t.ok(node.isRoot, '`node` is in the root objects set')
         
         
-        var refNode   = node.data.ref
+        var refNode   = node.data.$ref
         
         t.ok(refNode === node, 'Self-referencing node was collapsed correctly')
         
@@ -61,7 +63,8 @@ StartTest(function(t) {
         
         t.ok(entry.ID == node.ID, "Node's entry has correct ID")
         
-        t.ok(entryData.ref.$ref == node.ID, 'Self-reference was correctly serialized')
+        t.ok(entryData['public:$ref'].$ref == node.ID, 'Self-reference was correctly serialized')
+        t.ok(entryData['public:$entry'] == '123', 'Entry with name `$entry` was correctly serialized')
         
         t.endAsync(async0)
     })
