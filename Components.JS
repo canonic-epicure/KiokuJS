@@ -14,6 +14,8 @@ COMPONENTS = {
         "KiokuJS.Resolver",
         "KiokuJS.Resolver.Standard",
         
+        "KiokuJS.Role.Resolvable",
+        
         "KiokuJS.Collapser.Inliner",
         
         "KiokuJS.Linker.Gatherer",
