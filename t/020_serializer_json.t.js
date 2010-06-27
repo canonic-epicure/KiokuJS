@@ -11,7 +11,7 @@ StartTest(function(t) {
         
         t.ok(KiokuJS.Serializer.JSON, "KiokuJS.Serializer.JSON is here")
 
-        var serializer = new KiokuJS.Serializer.JSON()
+        var serializer = KiokuJS.Serializer.JSON
         
         
         //======================================================================================================================================================================================================================================================

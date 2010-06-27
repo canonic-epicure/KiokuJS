@@ -168,7 +168,7 @@ StartTest(function(t) {
         
         var nodes = collapser.collapse({}, [ Homer ])
         
-        t.ok(nodes.length == 4, 'Correct number of nodes is returned (`kids` array is shared)')
+        t.ok(nodes.length == 4, 'Correct number of nodes is returned (`kids` array is intrinsic)')
         
         
         var homerNode   = nodes[0]
