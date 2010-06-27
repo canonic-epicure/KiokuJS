@@ -1,10 +1,10 @@
 StartTest(function(t) {
     
-	t.plan(8)
+	t.plan(1)
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS', 'KiokuJS.Backend.Hash' ], function () {
+    use([ 'KiokuJS', 'KiokuJS.Linker.Expander', 'KiokuJS.Backend.Hash' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
@@ -24,6 +24,7 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Graph setup')
         
+        
         var instance = new Some.Class()
         
         instance.ref = instance
@@ -37,31 +38,33 @@ StartTest(function(t) {
             backend             : new KiokuJS.Backend.Hash()
         })
         
-        
-        var nodes = collapser.collapse({}, [ instance ])
-        
-        t.ok(nodes.length == 1, 'Correct number of nodes was returned')
-        
-        var node   = nodes[0]
+        var nodes   = collapser.collapse({}, [ instance ])
+        var node    = nodes[0]
 
-        t.ok(node.object === instance, '`node` has correct object')
-        t.ok(node.isRoot, '`node` is in the root objects set')
-        
-        
-        var refNode   = node.data.ref
-        
-        t.ok(refNode === node, 'Self-referencing node was collapsed correctly')
-        
         
         //======================================================================================================================================================================================================================================================
-        t.diag('Checking entries')
+        t.diag('Expanding entries')
         
+        // creates an entry
         var entry       = node.getEntry()
-        var entryData   = entry.entry
         
-        t.ok(entry.ID == node.ID, "Node's entry has correct ID")
+        var scope       = new KiokuJS.Scope({
+            backend     : collapser.backend,
+            resolver    : collapser.resolver
+        })
         
-        t.ok(entryData.ref.$ref == node.ID, 'Self-reference was correctly serialized')
+        var nodesObject = {}
+        
+        nodesObject[ node.ID ] = node
+        
+        var objects     = KiokuJS.Linker.Expander.expandNodes(nodesObject, scope)
+        
+        var object      = objects[ node.ID ]
+        
+        t.ok(object, 'Something was expanded into objects')
+        
+        t.ok(object instanceof Some.Class, "And its an instance of correct class")
+        t.ok(object.ref == object, 'And it has a correct self-referencing attribute')
         
         t.endAsync(async0)
     })
