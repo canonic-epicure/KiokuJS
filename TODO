@@ -4,10 +4,12 @@ TASKS
 - speed up Data.Visitor as much as possible (remove too detailed visits, like object key, etc) 
   may be switch it to JooseX.Proto.Class? (needs to be benchmarked first)
 
-- serialization of dates!
+- serialization of dates (test)
+- deserialization tests
 
 - KiokuJS.Serializer.JSON.BuiltIn (JSON.stringify)
 
+- remove `typeMap' attr from Node (seems only required in `aquireId` and can be passed to it)
 
 
 DONE
