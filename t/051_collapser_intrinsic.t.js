@@ -76,13 +76,13 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
         var graphEntry       = graphNode.getEntry()
-        var graphData        = graphEntry.entry
+        var graphData        = graphEntry.data
         
         t.ok(graphEntry.className == 'Object', 'Entry has correct `className`')
         
         
         var arrayEntry       = arrayNode.getEntry()
-        var arrayData        = arrayEntry.entry
+        var arrayData        = arrayEntry.data
         
         t.ok(arrayEntry.className == 'Array', 'Entry has correct `className`')
 
@@ -93,7 +93,7 @@ StartTest(function(t) {
         var intrinsicEntry = arrayData[1]
         
         t.ok(intrinsicEntry.className == 'ValueWrapper', 'Entry has correct `className`')
-        t.ok(intrinsicEntry.entry.value == 'someValue', 'Entry has correct `data`')
+        t.ok(intrinsicEntry.data.value == 'someValue', 'Entry has correct `data`')
         
         
         t.endAsync(async0)

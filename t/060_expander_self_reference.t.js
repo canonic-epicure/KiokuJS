@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(1)
+	t.plan(6)
     
     var async0 = t.beginAsync()
     
@@ -45,17 +45,18 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Expanding entries')
         
-        // creates an entry
-        var entry       = node.getEntry()
-        
         var scope       = new KiokuJS.Scope({
             backend     : collapser.backend,
             resolver    : collapser.resolver
         })
         
+        var entry       = node.getEntry()
+        entry.backend   = collapser.backend
+        
         var nodesObject = {}
         
-        nodesObject[ node.ID ] = node
+        nodesObject[ node.ID ] = new KiokuJS.Node(entry)
+        
         
         var objects     = KiokuJS.Linker.Expander.expandNodes(nodesObject, scope)
         
@@ -64,7 +65,9 @@ StartTest(function(t) {
         t.ok(object, 'Something was expanded into objects')
         
         t.ok(object instanceof Some.Class, "And its an instance of correct class")
+        t.ok(object != instance, 'Its a different, newly created instance')
         t.ok(object.ref == object, 'And it has a correct self-referencing attribute')
+        
         
         t.endAsync(async0)
     })

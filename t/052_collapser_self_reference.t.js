@@ -57,7 +57,7 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
         var entry       = node.getEntry()
-        var entryData   = entry.entry
+        var entryData   = entry.data
         
         t.ok(entry.ID == node.ID, "Node's entry has correct ID")
         

@@ -4,6 +4,10 @@ TERMS
 Collapsing      - reducing an object into DB entry
 Linking         - the reverse of collapsing, DB Entry => Object
 
+Node            - a wrapper for object, providing a common interface during serialization, also wrapper for Entry
+Entry           - a simple JSON data structure, which will be stored/loaded in/from backend
+
+
 
 DESIGN DECISIONS
 ================
