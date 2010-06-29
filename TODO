@@ -1,7 +1,7 @@
 TASKS
 =====
  
-- speed up Data.Visitor as much as possible (remove too detailed visits, like object key, etc) 
+- speed up Data.Visitor as much as possible (remove too detailed visits, like object key, etc) (required for JSON?)
   may be switch it to JooseX.Proto.Class? (needs to be benchmarked first)
 
 - serialization of dates (test)
@@ -10,6 +10,10 @@ TASKS
 - KiokuJS.Serializer.JSON.BuiltIn (JSON.stringify)
 
 - remove `typeMap' attr from Node (seems only required in `aquireId` and can be passed to it)
+
+
+- KiokuJS.Test.Fixture - a set of tests fixtures to run with different backends
+
 
 
 DONE
