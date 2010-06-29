@@ -2,7 +2,7 @@ COMPONENTS = {
     
     "Core" : [
         "KiokuJS.Reference",
-        "KiokuJS.Serializer",
+        "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
         
         "KiokuJS.TypeMap",
