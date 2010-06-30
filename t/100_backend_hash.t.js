@@ -10,13 +10,11 @@ StartTest(function(t) {
         t.ok(KiokuJS.Test, "KiokuJS.Test is here")
         t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
         
-        var test = new KiokuJS.Test()
-        
-        test.runAllFixtures({
+        new KiokuJS.Test().runAllFixtures({
             t       : t,
             
             init    : function () {
-                return new KiokuJS({
+                return KiokuJS.connect({
                     backend : new KiokuJS.Backend.Hash()
                 })
             }
@@ -24,6 +22,7 @@ StartTest(function(t) {
         }).then(function () {
             
             t.endAsync(async0)
+            
             t.done()
             
         }).now()

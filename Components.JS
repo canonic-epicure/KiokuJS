@@ -23,6 +23,8 @@ COMPONENTS = {
         
         "KiokuJS.Node",
         
+        "KiokuJS.Backend.Role.SkipFixture",
+        
         "KiokuJS.Backend",
         "KiokuJS.Backend.Hash",
         
@@ -43,6 +45,14 @@ COMPONENTS = {
         "jsan:Data.UUID",
         "jsan:Data.Visitor",
         "+Core"    
+    ],
+    
+    
+    "Test" : [
+        "+Bundle",
+        "KiokuJS.Test.Fixture",
+        "KiokuJS.Test.Fixture.ObjectGraph",
+        "KiokuJS.Test"
     ]
 } 
 
