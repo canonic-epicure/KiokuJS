@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-    t.plan(10)
-    
     var async0 = t.beginAsync()
     
     use([ 'KiokuJS.Backend.Hash' ], function () {
@@ -75,6 +73,8 @@ StartTest(function(t) {
                             t.ok(!res[1], "Entry with ID = 2 doesn't exists")
                             
                             t.endAsync(async0)
+                            
+                            t.done()
                         }).now()
                     }).now()
                 }).now()

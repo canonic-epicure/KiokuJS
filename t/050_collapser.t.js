@@ -11,7 +11,7 @@ StartTest(function(t) {
         
         t.ok(KiokuJS,               "'KiokuJS' is here")
         t.ok(KiokuJS.Collapser,     "'KiokuJS.Collapser' is here")
-        t.ok(Person,                "'Person' is here")
+        t.ok(KiokuJS.Test.Person,   "'KiokuJS.Test.Person' is here")
 
         
         //======================================================================================================================================================================================================================================================
@@ -104,7 +104,7 @@ StartTest(function(t) {
         var data        = entry.data
         
         t.ok(entry.ID == homerNode.ID, 'Entry has correct ID')
-        t.ok(entry.className == 'Person', 'Entry has correct `className`')
+        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
         t.ok(data.name == 'Homer Simpson', 'Entry has correct name')
         t.ok(data.spouse.$ref == margeNode.ID, 'Entry has correct `spouse` ref')
@@ -115,7 +115,7 @@ StartTest(function(t) {
         var data        = entry.data
         
         t.ok(entry.ID == margeNode.ID, 'Entry has correct ID')
-        t.ok(entry.className == 'Person', 'Entry has correct `className`')
+        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
         t.ok(data.name == 'Marge Simpson', 'Entry has correct name')
         t.ok(data.spouse.$ref == homerNode.ID, 'Entry has correct `spouse` ref')
@@ -136,7 +136,7 @@ StartTest(function(t) {
         var data        = entry.data
         
         t.ok(entry.ID == bartNode.ID, 'Entry has correct ID')
-        t.ok(entry.className == 'Person', 'Entry has correct `className`')
+        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
         t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
         t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
@@ -146,7 +146,7 @@ StartTest(function(t) {
         var data        = entry.data
         
         t.ok(entry.ID == lisaNode.ID, 'Entry has correct ID')
-        t.ok(entry.className == 'Person', 'Entry has correct `className`')
+        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
         t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
         t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')

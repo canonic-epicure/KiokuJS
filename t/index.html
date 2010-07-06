@@ -11,39 +11,5 @@
 
 	
 	<body>
-		<script type="text/javascript">
-            var INC = []
-            Joose.A.each([ 'lib', '../lib', '/jsan' ], function (path) {
-                INC.push(Test.Run.Harness.Browser.Multi.my.resolveUrl(path, true))
-            }) 
-		
-		
-			Test.Run.Harness.Browser.Multi.my.configure({
-				title : 'KiokuJS Test Suite',
-				
-				passThroughEx : true,
-				
-				preload : [
-                    'Task.KiokuJS.Bundle',
-                    {
-                        text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(INC)
-                    }
-			    ]
-			})
-			
-			
-			Test.Run.Harness.Browser.Multi.my.start(
-				'010_sanity.t.js',
-                '020_serializer_json.t.js',
-                '030_resolver.t.js',
-                '040_backend_hash.t.js',
-                '050_collapser.t.js',
-                '051_collapser_intrinsic.t.js',
-                '052_collapser_self_reference.t.js',
-                '060_expander_self_reference.t.js',
-                '090_gatherer.t.js',
-                '100_simpsons.t.js'
-			)
-		</script>
 	</body>
 </html>

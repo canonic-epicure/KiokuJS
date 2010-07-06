@@ -1,8 +1,8 @@
 StartTest(function(t) {
     
-    t.plan(11)
-    
     var async0 = t.beginAsync()
+    
+    t.plan(11)
     
     use([ 'KiokuJS.Resolver.Standard', 'KiokuJS.Test.TypeMap.Person' ], function () {
         
@@ -54,7 +54,7 @@ StartTest(function(t) {
         t.diag('Dependencies loading')
         
         
-        t.ok(typeof KiokuJS.Test.Person == 'undefined', "Class 'Person' isn't loaded yet")
+        t.ok(typeof KiokuJS.Test.Person == 'undefined', "Class 'KiokuJS.Test.Person' isn't loaded yet")
         
         resolver = new KiokuJS.Resolver.Standard([
             {
@@ -81,7 +81,9 @@ StartTest(function(t) {
             t.ok(resolver.resolveSingle('KiokuJS.Test.Person.Tidy') == res[0], "TypeMap for 'KiokuJS.Test.Person' handles subclasses also")
             
             
-            t.endAsync(async0)    
+            t.endAsync(async0)
+            
+            t.done()
         }).now()
     })
 })    

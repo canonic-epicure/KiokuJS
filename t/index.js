@@ -14,7 +14,8 @@ var INC = [ '../lib', '/jsan' ]
 Harness.configure({
     title : 'KiokuJS Test Suite',
     
-    transparentEx : true,
+//    transparentEx : true,
+    keepResults : true,
     
     preload : Joose.is_NodeJS ? [
         'Task.KiokuJS.NodeJSTest',

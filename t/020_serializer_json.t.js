@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-	t.plan(16)
-    
     var async0 = t.beginAsync()
     
     use('KiokuJS.Serializer.JSON', function () {
@@ -51,5 +49,7 @@ StartTest(function(t) {
         
         
         t.endAsync(async0)
+        
+        t.done()
     })
 })    

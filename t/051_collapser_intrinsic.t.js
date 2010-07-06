@@ -92,7 +92,7 @@ StartTest(function(t) {
         
         var intrinsicEntry = arrayData[1]
         
-        t.ok(intrinsicEntry.className == 'ValueWrapper', 'Entry has correct `className`')
+        t.ok(intrinsicEntry.className == 'KiokuJS.Test.ValueWrapper', 'Entry has correct `className`')
         t.ok(intrinsicEntry.data.value == 'someValue', 'Entry has correct `data`')
         
         

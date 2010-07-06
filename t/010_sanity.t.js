@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-	t.plan(1)
-    
     var async0 = t.beginAsync()
     
     use('KiokuJS', function () {
@@ -10,6 +8,8 @@ StartTest(function(t) {
         t.diag('Sanity')
         
         t.ok(KiokuJS, "KiokuJS is here")
+        
+        t.done()
         
         t.endAsync(async0)
     })

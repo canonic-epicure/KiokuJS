@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-	t.plan(6)
-    
     var async0 = t.beginAsync()
     
     use([ 'KiokuJS', 'KiokuJS.Linker.Expander', 'KiokuJS.Backend.Hash' ], function () {
@@ -74,5 +72,7 @@ StartTest(function(t) {
         t.ok(object.$entry == '123', 'And it has a correct value for `$entry` property')
         
         t.endAsync(async0)
+        
+        t.done()
     })
 })    
