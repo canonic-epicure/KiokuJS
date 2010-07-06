@@ -41,5 +41,5 @@ Harness.start(
     '052_collapser_self_reference.t.js',
     '060_expander_self_reference.t.js',
     '090_gatherer.t.js',
-    '100_simpsons.t.js'
+    '100_fixtures_backend_hash.t.js'
 )

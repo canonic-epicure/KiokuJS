@@ -4,13 +4,13 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS.Resolver.Standard', 'TypeMap.Person' ], function () {
+    use([ 'KiokuJS.Resolver.Standard', 'KiokuJS.Test.TypeMap.Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
         t.ok(KiokuJS.Resolver.Standard, "KiokuJS.Resolver.Standard is here")
-        t.ok(TypeMap.Person, "TypeMap.Person is here")
+        t.ok(KiokuJS.Test.TypeMap.Person, "KiokuJS.Test.TypeMap.Person is here")
         
         
         var resolver = new KiokuJS.Resolver.Standard()
@@ -54,31 +54,31 @@ StartTest(function(t) {
         t.diag('Dependencies loading')
         
         
-        t.ok(typeof Person == 'undefined', "Class 'Person' isn't loaded yet")
+        t.ok(typeof KiokuJS.Test.Person == 'undefined', "Class 'Person' isn't loaded yet")
         
         resolver = new KiokuJS.Resolver.Standard([
             {
-                meta : TypeMap.Person
+                meta : KiokuJS.Test.TypeMap.Person
             }
         ])
         
-        resolver.resolve([ 'Person' ]).then(function (res) {
+        resolver.resolve([ 'KiokuJS.Test.Person' ]).then(function (res) {
             
-            t.ok(Person, "Class 'Person' was loaded")
+            t.ok(KiokuJS.Test.Person, "Class 'KiokuJS.Test.Person' was loaded")
             
-            t.ok(res[0] instanceof TypeMap.Person, 'Correct typeMap resolved #5')
+            t.ok(res[0] instanceof KiokuJS.Test.TypeMap.Person, 'Correct typeMap resolved #5')
             
             
             //======================================================================================================================================================================================================================================================
             t.diag('TypeMap inheritance')
             
             
-            Class('Person.Tidy', { 
-                isa : Person 
+            Class('KiokuJS.Test.Person.Tidy', { 
+                isa : KiokuJS.Test.Person 
             })
             
 
-            t.ok(resolver.resolveSingle('Person.Tidy') == res[0], "TypeMap for 'Person' handles subclasses also")
+            t.ok(resolver.resolveSingle('KiokuJS.Test.Person.Tidy') == res[0], "TypeMap for 'KiokuJS.Test.Person' handles subclasses also")
             
             
             t.endAsync(async0)    

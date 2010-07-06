@@ -4,22 +4,22 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'ValueWrapper', 'TypeMap.ValueWrapper' ], function () {
+    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'KiokuJS.Test.ValueWrapper', 'KiokuJS.Test.TypeMap.ValueWrapper' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
         
-        t.ok(KiokuJS,               "'KiokuJS' is here")
-        t.ok(KiokuJS.Collapser,     "'KiokuJS.Collapser' is here")
-        t.ok(ValueWrapper,          "'ValueWrapper' is here")
-        t.ok(TypeMap.ValueWrapper,  "'TypeMap.ValueWrapper' is here")
+        t.ok(KiokuJS,                           "'KiokuJS' is here")
+        t.ok(KiokuJS.Collapser,                 "'KiokuJS.Collapser' is here")
+        t.ok(KiokuJS.Test.ValueWrapper,         "'KiokuJS.Test.ValueWrapper' is here")
+        t.ok(KiokuJS.Test.TypeMap.ValueWrapper, "'TKiokuJS.Test.ypeMap.ValueWrapper' is here")
 
         
         //======================================================================================================================================================================================================================================================
         t.diag('Graph setup')
         
         
-        var value = new ValueWrapper({ value : 'someValue' })
+        var value = new KiokuJS.Test.ValueWrapper({ value : 'someValue' })
         
         var array = [ value, value ]
         
@@ -36,7 +36,7 @@ StartTest(function(t) {
         var collapser = new KiokuJS.Collapser({
             resolver            : new KiokuJS.Resolver.Standard([
                 {
-                    meta : 'TypeMap.ValueWrapper'
+                    meta : 'KiokuJS.Test.TypeMap.ValueWrapper'
                 }
             ]),
             backend             : backend

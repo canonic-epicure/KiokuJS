@@ -4,7 +4,7 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'Person' ], function () {
+    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'KiokuJS.Test.Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
@@ -17,25 +17,25 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Graph setup')
         
-        var Homer = new Person({
+        var Homer = new KiokuJS.Test.Person({
             name    : 'Homer Simpson'
         })
         
-        var Marge = new Person({
+        var Marge = new KiokuJS.Test.Person({
             name    : 'Marge Simpson'
         })
         
-        var Bart = new Person({
+        var Bart = new KiokuJS.Test.Person({
             name    : 'Bart Simpson'
         })
         
-        var Lisa = new Person({
+        var Lisa = new KiokuJS.Test.Person({
             name    : 'Lisa Simpson'
         })
         
         
-        Homer.spouse    = Marge
-        Marge.spouse    = Homer
+        Homer.spouse(Marge)
+        Marge.spouse(Homer)
         
         Bart.farther    = Lisa.farther  = Homer
         Bart.mother     = Lisa.mother   = Marge
