@@ -36,7 +36,14 @@ COMPONENTS = {
     ],
     
     
-    "Bundle" : [
+    "Test" : [
+        "KiokuJS.Test.Fixture",
+        "KiokuJS.Test.Fixture.ObjectGraph",
+        "KiokuJS.Test"
+    ],
+    
+    
+    "WebBundle" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
         "jsan:JooseX.SimpleRequest",
@@ -44,15 +51,34 @@ COMPONENTS = {
         "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
         "jsan:Data.Visitor",
+        
         "+Core"    
     ],
     
     
-    "Test" : [
-        "+Bundle",
-        "KiokuJS.Test.Fixture",
-        "KiokuJS.Test.Fixture.ObjectGraph",
-        "KiokuJS.Test"
+    "NodeJSBundle" : [
+        "jsan:Task.Joose.Core",
+        "jsan:Task.JooseX.Attribute.Bootstrap",
+        "jsan:Task.JooseX.Namespace.Depended.NodeJS",
+        "jsan:Task.JooseX.CPS.All",
+        "jsan:Data.UUID",
+        "jsan:Data.Visitor",
+        
+        "+Core"    
+    ],
+    
+    
+    "WebTest" : [
+        "+WebBundle",
+        
+        "+Test"
+    ],
+    
+    
+    "NodeJSTest" : [
+        "+NodeJSBundle",
+        
+        "+Test"
     ]
 } 
 
