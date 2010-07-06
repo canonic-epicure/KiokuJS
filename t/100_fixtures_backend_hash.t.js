@@ -11,7 +11,7 @@ StartTest(function(t) {
         t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
         t.ok(KiokuJS.Test.Person, "KiokuJS.Test.Person is here")
         
-        new KiokuJS.Test().runAllFixtures({
+        new KiokuJS.Test({
             t       : t,
             
             init    : function () {
@@ -20,7 +20,7 @@ StartTest(function(t) {
                 })
             }
             
-        }).then(function () {
+        }).runAllFixtures().then(function () {
             
             t.endAsync(async0)
             

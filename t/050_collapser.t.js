@@ -1,7 +1,5 @@
 StartTest(function(t) {
     
-	t.plan(65)
-    
     var async0 = t.beginAsync()
     
     use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'KiokuJS.Test.Person' ], function () {
@@ -232,6 +230,7 @@ StartTest(function(t) {
         t.ok(data.children.data[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
         t.ok(data.children.data[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
         
+        t.done()
         
         t.endAsync(async0)
     })

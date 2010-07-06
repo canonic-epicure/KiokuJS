@@ -2,7 +2,7 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    t.plan(11)
+//    t.plan(11)
     
     use([ 'KiokuJS.Resolver.Standard', 'KiokuJS.Test.TypeMap.Person' ], function () {
         
@@ -84,6 +84,7 @@ StartTest(function(t) {
             t.endAsync(async0)
             
             t.done()
+            
         }).now()
     })
 })    

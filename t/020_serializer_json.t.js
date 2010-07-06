@@ -48,8 +48,8 @@ StartTest(function(t) {
         t.ok(serializer.serialize({ foo : 'bar', bar : [ 'baz', 'zab' ]}) == '{"foo":"bar","bar":["baz","zab"]}', 'Object serialized ok')
         
         
-        t.endAsync(async0)
-        
         t.done()
+        
+        t.endAsync(async0)
     })
 })    

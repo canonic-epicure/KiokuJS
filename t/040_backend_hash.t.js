@@ -72,9 +72,9 @@ StartTest(function(t) {
                             t.ok(!res[0], "Entry with ID = 1 doesn't exists")
                             t.ok(!res[1], "Entry with ID = 2 doesn't exists")
                             
-                            t.endAsync(async0)
-                            
                             t.done()
+                            
+                            t.endAsync(async0)
                         }).now()
                     }).now()
                 }).now()
