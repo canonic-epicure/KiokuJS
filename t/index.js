@@ -15,7 +15,8 @@ Harness.configure({
     title : 'KiokuJS Test Suite',
     
 //    transparentEx : true,
-    keepResults : true,
+//    keepResults : true,
+//    verbosity : 1,
     
     preload : Joose.is_NodeJS ? [
         'Task.KiokuJS.NodeJSTest',
