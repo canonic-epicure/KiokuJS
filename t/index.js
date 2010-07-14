@@ -38,6 +38,7 @@ Harness.start(
     '020_serializer_json.t.js',
     '030_resolver.t.js',
     '050_collapser.t.js',
+    '051_collapser_shallow.t.js',
     '060_encoder.t.js',
     '061_encoder_intrinsic.t.js',
     '062_encoder_reserved_keys.t.js',
