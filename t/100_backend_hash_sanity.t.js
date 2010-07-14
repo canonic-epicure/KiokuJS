@@ -9,9 +9,15 @@ StartTest(function(t) {
         
         t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
         t.ok(KiokuJS.Node, "KiokuJS.Node is here")
+        t.ok(KiokuJS.Resolver.Standard, "KiokuJS.Resolver.Standard is here")
         
+        var resolver = new KiokuJS.Resolver.Standard()
         
-        var backend = new KiokuJS.Backend.Hash()
+        t.ok(resolver, "KiokuJS.Resolver.Standard was instantiated")
+        
+        var backend = new KiokuJS.Backend.Hash({
+            resolver : resolver
+        })
         
         t.ok(backend, "KiokuJS.Backend.Hash was instantiated")
         
@@ -28,7 +34,7 @@ StartTest(function(t) {
                 
                 className   : 'Object',
                 
-                backend     : backend,
+                typeMap     : resolver.resolveSingle('Object'),
                 
                 data        : { foo : "foo1" } 
             }),
@@ -43,13 +49,13 @@ StartTest(function(t) {
                 data        : { bar : "foo2" } 
             })
             
-        ]).then(function () {
+        ]).andThen(function () {
             
             //======================================================================================================================================================================================================================================================
             t.diag('Exists')
             
             
-            backend.exists([ 1, 10, 2 ]).then(function (res) {
+            backend.exists([ 1, 10, 2 ]).andThen(function (res) {
                 
                 t.ok(res[0], "Entry with ID = 1 exists")
                 t.ok(!res[1], "Entry with ID = 10 doesn't exists")
@@ -58,16 +64,16 @@ StartTest(function(t) {
                 //======================================================================================================================================================================================================================================================
                 t.diag('Get')
                 
-                backend.get([ 2, 1, 10 ]).then(function (res) {
+                backend.get([ 2, 1, 10 ]).andThen(function (res) {
                 
                     t.ok(res[0].data.bar == 'foo2', 'Entry with ID = 2, retrieved correctly')
                     t.ok(res[1].data.foo == 'foo1', 'Entry with ID = 1, retrieved correctly')
                     t.ok(res[2] == null, 'There is no entry with ID = 10')
 
                     
-                    backend.remove([ 1, 2 ]).then(function () {
+                    backend.remove([ 1, 2 ]).andThen(function () {
                     
-                        backend.exists([ 1, 2 ]).then(function (res) {
+                        backend.exists([ 1, 2 ]).andThen(function (res) {
                             
                             t.ok(!res[0], "Entry with ID = 1 doesn't exists")
                             t.ok(!res[1], "Entry with ID = 2 doesn't exists")
@@ -75,10 +81,10 @@ StartTest(function(t) {
                             t.done()
                             
                             t.endAsync(async0)
-                        }).now()
-                    }).now()
-                }).now()
-            }).now() 
-        }).now()
+                        })
+                    })
+                })
+            }) 
+        })
     })
 })    

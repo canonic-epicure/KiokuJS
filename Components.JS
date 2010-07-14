@@ -16,12 +16,13 @@ COMPONENTS = {
         
         "KiokuJS.Role.Resolvable",
         
+        "KiokuJS.Node",
+        
         "KiokuJS.Collapser.Encoder",
+        "KiokuJS.Collapser.Decoder",
         
         "KiokuJS.Linker.Gatherer",
         "KiokuJS.Linker.Expander",
-        
-        "KiokuJS.Node",
         
         "KiokuJS.Backend.Role.SkipFixture",
         

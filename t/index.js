@@ -37,11 +37,11 @@ Harness.start(
 	'010_sanity.t.js',
     '020_serializer_json.t.js',
     '030_resolver.t.js',
-    '040_backend_hash.t.js',
     '050_collapser.t.js',
     '051_collapser_intrinsic.t.js',
     '052_collapser_self_reference.t.js',
     '060_expander_self_reference.t.js',
     '090_gatherer.t.js',
-    '100_fixtures_backend_hash.t.js'
+    '100_backend_hash_sanity.t.js',
+    '110_backend_hash_fixtures.t.js'
 )
