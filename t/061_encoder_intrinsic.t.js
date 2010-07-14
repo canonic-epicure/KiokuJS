@@ -79,7 +79,7 @@ StartTest(function(t) {
         var valueEntry2   = arrayData[0]
         var valueEntry3   = arrayData[1]
         
-        t.ok(valueEntry1 == valueEntry2 && valueEntry2 == valueEntry3, 'All three value entries are still equal')
+        t.ok(valueEntry1 != valueEntry2 && valueEntry2 == valueEntry3, 'Value entries are shared among the call to `encode`')
         
         t.ok(valueEntry1.data.value == 'someValue', '`valueEntry1` has correct value')
         t.ok(valueEntry2.data.value == 'someValue', '`valueEntry2` has correct value')
