@@ -99,6 +99,7 @@ StartTest(function(t) {
         t.diag('Checking entries')
         
 
+        t.ok(homerEntry.$entry, "Homer's entry is marked with $entry")
         t.ok(homerEntry.ID == homerNode.ID, "Homer's entry has correct ID")
         
         t.ok(homerEntry.className == 'KiokuJS.Test.Person', "Homer's entry has correct `className`")
@@ -109,6 +110,7 @@ StartTest(function(t) {
         t.ok(homerData.children.$ref == childrenNode.ID, "Homer's entry has correct `children` ref")
 
         
+        t.ok(margeEntry.$entry, "Marge's entry is marked with $entry")
         t.ok(margeEntry.ID == margeNode.ID, "Marge's entry has correct ID")
         
         t.ok(margeEntry.className == 'KiokuJS.Test.Person', "Marge's entry has correct `className`")
@@ -119,6 +121,7 @@ StartTest(function(t) {
         t.ok(margeData.children.$ref == childrenNode.ID, "Marge's entry has correct `children` ref")
         
         
+        t.ok(childrenEntry.$entry, "Children's entry is marked with $entry")
         t.ok(childrenEntry.ID == childrenNode.ID, "Children's entry has correct ID")
         
         t.ok(childrenEntry.className == 'Array', "Children's entry has correct `className`")
@@ -127,6 +130,7 @@ StartTest(function(t) {
         t.ok(childrenData[1].$ref == lisaNode.ID, "Children's entry has correct second element")
 
 
+        t.ok(bartEntry.$entry, "Bart's entry is marked with $entry")
         t.ok(bartEntry.ID == bartNode.ID, "Bart's entry has correct ID")
         
         t.ok(bartEntry.className == 'KiokuJS.Test.Person', "Bart's entry has correct `className`")
@@ -137,6 +141,7 @@ StartTest(function(t) {
         t.ok(bartData.mother.$ref == margeNode.ID, "Bart's entry has correct `mother` ref")
         
         
+        t.ok(lisaEntry.$entry, "Lisa's entry is marked with $entry")
         t.ok(lisaEntry.ID == lisaNode.ID, "Lisa's entry has correct ID")
         
         t.ok(lisaEntry.className == 'KiokuJS.Test.Person', "Lisa's entry has correct `className`")

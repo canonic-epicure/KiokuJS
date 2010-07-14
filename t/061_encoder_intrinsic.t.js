@@ -71,17 +71,23 @@ StartTest(function(t) {
         t.ok(graphNode.isRoot, '`graphNode` is in the root objects set')
         t.ok(arrayNode.isRoot, '`arrayNode` is in the root objects set')
         
-        
-//        var valueNode1   = graphNode.data.data1
-//        var valueNode2   = arrayNode.data[0]
-//        var valueNode3   = arrayNode.data[1]
-//        
-//        t.ok(valueNode1 === valueNode2 && valueNode2 === valueNode3, 'All three value nodes are shared')
-//        
-//        t.ok(!valueNode1.isFirstClass(), '`valueNode1` is not first class')
+        t.ok(graphEntry.$entry, "graphEntry is marked with $entry")
+        t.ok(arrayEntry.$entry, "arrayEntry is marked with $entry")
         
         
+        var valueEntry1   = graphData.data1
+        var valueEntry2   = arrayData[0]
+        var valueEntry3   = arrayData[1]
         
+        t.ok(valueEntry1 == valueEntry2 && valueEntry2 == valueEntry3, 'All three value entries are still equal')
+        
+        t.ok(valueEntry1.data.value == 'someValue', '`valueEntry1` has correct value')
+        t.ok(valueEntry2.data.value == 'someValue', '`valueEntry2` has correct value')
+        t.ok(valueEntry3.data.value == 'someValue', '`valueEntry3` has correct value')
+        
+        t.ok(valueEntry1.$entry, '`valueEntry1` is marked with $entry')
+        t.ok(valueEntry2.$entry, '`valueEntry2` is marked with $entry')
+        t.ok(valueEntry3.$entry, '`valueEntry3` is marked with $entry')
         
         t.done()
         

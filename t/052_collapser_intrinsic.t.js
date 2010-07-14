@@ -70,15 +70,13 @@ StartTest(function(t) {
         t.ok(arrayNode.isRoot, '`arrayNode` is in the root objects set')
         
         
-//        var valueNode1   = graphNode.data.data1
-//        var valueNode2   = arrayNode.data[0]
-//        var valueNode3   = arrayNode.data[1]
-//        
-//        t.ok(valueNode1 === valueNode2 && valueNode2 === valueNode3, 'All three value nodes are shared')
-//        
-//        t.ok(!valueNode1.isFirstClass(), '`valueNode1` is not first class')
+        var valueNode1   = graphNode.data.data1
+        var valueNode2   = arrayNode.data[0]
+        var valueNode3   = arrayNode.data[1]
         
+        t.ok(valueNode1 === valueNode2 && valueNode2 === valueNode3, 'All three value nodes are shared')
         
+        t.ok(!valueNode1.isFirstClass(), '`valueNode1` is not first class')
         
         
         t.done()
