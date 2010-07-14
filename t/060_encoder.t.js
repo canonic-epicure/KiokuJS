@@ -35,7 +35,7 @@ StartTest(function(t) {
         Homer.spouse(Marge)
         Marge.spouse(Homer)
         
-        Bart.farther    = Lisa.farther  = Homer
+        Bart.father     = Lisa.father  = Homer
         Bart.mother     = Lisa.mother   = Marge
         
         var kids = [ Bart, Lisa ]
@@ -72,75 +72,82 @@ StartTest(function(t) {
         
         
         //======================================================================================================================================================================================================================================================
-        t.diag('Encoding nodes into plain entries')
+        t.diag('Setting up nodes & entries')
         
-        var entries = Joose.A.map(nodes, function (node) {
-            return node.getEntry()
-        })
+        var homerNode           = scope.objectToNode(Homer)
+        var homerEntry          = backend.encode(homerNode.getEntry())
+        var homerData           = homerEntry.data
         
-        var encodedEntries = backend.encode(entries)
+        var margeNode           = scope.objectToNode(Marge)
+        var margeEntry          = backend.encode(margeNode.getEntry())
+        var margeData           = margeEntry.data
+
+        var bartNode            = scope.objectToNode(Bart)
+        var bartEntry           = backend.encode(bartNode.getEntry())
+        var bartData            = bartEntry.data
+
+        var lisaNode            = scope.objectToNode(Lisa)
+        var lisaEntry           = backend.encode(lisaNode.getEntry())
+        var lisaData            = lisaEntry.data
         
+        var childrenNode        = scope.objectToNode(kids)
+        var childrenEntry       = backend.encode(childrenNode.getEntry())
+        var childrenData        = childrenEntry.data
+
         
         //======================================================================================================================================================================================================================================================
         t.diag('Checking entries')
         
-        var homerEntry          = encodedEntries[0]
-        var homerData           = homerEntry.data
-        var homerNode           = scope.objectToNode(Homer)
 
-        
         t.ok(homerEntry.ID == homerNode.ID, "Homer's entry has correct ID")
         
         t.ok(homerEntry.className == 'KiokuJS.Test.Person', "Homer's entry has correct `className`")
         
         t.ok(homerData.name == 'Homer Simpson', "Homer's entry has correct name")
         t.ok(homerData.self.$ref == homerEntry.ID, "Homer's entry has correct self-reference")
-        t.ok(homerData.spouse.$ref == scope.objectToNode(Marge).ID, "Homer's entry has correct `spouse` ref")
-        t.ok(homerData.children.$ref == scope.objectToNode(Homer.children).ID, "Homer's entry has correct `children` ref")
-//        
-//        
-//        var entry       = margeNode.getEntry()
-//        var data        = entry.data
-//        
-//        t.ok(entry.ID == margeNode.ID, 'Entry has correct ID')
-//        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
-//        
-//        t.ok(data.name == 'Marge Simpson', 'Entry has correct name')
-//        t.ok(data.spouse.$ref == homerNode.ID, 'Entry has correct `spouse` ref')
-//        t.ok(data.children.$ref == kidsNode1.ID, 'Entry has correct `children` ref')
-//        
-//
-//        var entry       = kidsNode1.getEntry()
-//        var data        = entry.data
-//        
-//        t.ok(entry.ID == kidsNode1.ID, 'Entry has correct ID')
-//        t.ok(entry.className == 'Array', 'Entry has correct `className`')
-//        
-//        t.ok(data[0].$ref == bartNode.ID, 'Entry has correct first element')
-//        t.ok(data[1].$ref == lisaNode.ID, 'Entry has correct second element')
-//        
-//        
-//        var entry       = bartNode.getEntry()
-//        var data        = entry.data
-//        
-//        t.ok(entry.ID == bartNode.ID, 'Entry has correct ID')
-//        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
-//        
-//        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
-//        t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
-//
-//        
-//        var entry       = lisaNode.getEntry()
-//        var data        = entry.data
-//        
-//        t.ok(entry.ID == lisaNode.ID, 'Entry has correct ID')
-//        t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
-//        
-//        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
-//        t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
-//        
-//        
-//        
+        t.ok(homerData.spouse.$ref == margeNode.ID, "Homer's entry has correct `spouse` ref")
+        t.ok(homerData.children.$ref == childrenNode.ID, "Homer's entry has correct `children` ref")
+
+        
+        t.ok(margeEntry.ID == margeNode.ID, "Marge's entry has correct ID")
+        
+        t.ok(margeEntry.className == 'KiokuJS.Test.Person', "Marge's entry has correct `className`")
+        
+        t.ok(margeData.name == 'Marge Simpson', "Marge's entry has correct name")
+        t.ok(margeData.self.$ref == margeEntry.ID, "Marge's entry has correct self-reference")
+        t.ok(margeData.spouse.$ref == homerNode.ID, "Marge's entry has correct `spouse` ref")
+        t.ok(margeData.children.$ref == childrenNode.ID, "Marge's entry has correct `children` ref")
+        
+        
+        t.ok(childrenEntry.ID == childrenNode.ID, "Children's entry has correct ID")
+        
+        t.ok(childrenEntry.className == 'Array', "Children's entry has correct `className`")
+        
+        t.ok(childrenData[0].$ref == bartNode.ID, "Children's entry has correct first element")
+        t.ok(childrenData[1].$ref == lisaNode.ID, "Children's entry has correct second element")
+
+
+        t.ok(bartEntry.ID == bartNode.ID, "Bart's entry has correct ID")
+        
+        t.ok(bartEntry.className == 'KiokuJS.Test.Person', "Bart's entry has correct `className`")
+        
+        t.ok(bartData.name == 'Bart Simpson', "Bart's entry has correct name")
+        t.ok(bartData.self.$ref == bartEntry.ID, "Bart's entry has correct self-reference")
+        t.ok(bartData.father.$ref == homerNode.ID, "Bart's entry has correct `father` ref")
+        t.ok(bartData.mother.$ref == margeNode.ID, "Bart's entry has correct `mother` ref")
+        
+        
+        t.ok(lisaEntry.ID == lisaNode.ID, "Lisa's entry has correct ID")
+        
+        t.ok(lisaEntry.className == 'KiokuJS.Test.Person', "Lisa's entry has correct `className`")
+        
+        t.ok(lisaData.name == 'Lisa Simpson', "Lisa's entry has correct name")
+        t.ok(lisaData.self.$ref == lisaEntry.ID, "Lisa's entry has correct self-reference")
+        t.ok(lisaData.father.$ref == homerNode.ID, "Lisa's entry has correct `father` ref")
+        t.ok(lisaData.mother.$ref == margeNode.ID, "Lisa's entry has correct `mother` ref")
+        
+        
+        
 //        //======================================================================================================================================================================================================================================================
 //        t.diag('Collapsing with intrinsic entries, repeating collapsing')
 //        

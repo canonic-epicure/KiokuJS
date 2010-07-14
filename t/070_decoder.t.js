@@ -35,7 +35,7 @@ StartTest(function(t) {
         Homer.spouse(Marge)
         Marge.spouse(Homer)
         
-        Bart.farther    = Lisa.farther  = Homer
+        Bart.father    = Lisa.father  = Homer
         Bart.mother     = Lisa.mother   = Marge
         
         var kids = [ Bart, Lisa ]
@@ -105,7 +105,7 @@ StartTest(function(t) {
         t.ok(entry.ID == bartNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
-        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
+        t.ok(data.father.$ref == homerNode.ID, 'Entry has correct `father` ref')
         t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
 
         
@@ -115,7 +115,7 @@ StartTest(function(t) {
         t.ok(entry.ID == lisaNode.ID, 'Entry has correct ID')
         t.ok(entry.className == 'KiokuJS.Test.Person', 'Entry has correct `className`')
         
-        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
+        t.ok(data.father.$ref == homerNode.ID, 'Entry has correct `father` ref')
         t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
         
         

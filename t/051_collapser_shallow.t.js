@@ -35,7 +35,7 @@ StartTest(function(t) {
         Homer.spouse(Marge)
         Marge.spouse(Homer)
         
-        Bart.farther    = Lisa.farther  = Homer
+        Bart.father     = Lisa.father  = Homer
         Bart.mother     = Lisa.mother   = Marge
         
         var kids = [ Bart, Lisa ]

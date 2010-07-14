@@ -48,7 +48,7 @@ StartTest(function(t) {
 //        Homer.spouse    = Marge
 //        Marge.spouse    = Homer
 //        
-//        Bart.farther    = Lisa.farther  = Homer
+//        Bart.father    = Lisa.father  = Homer
 //        Bart.mother     = Lisa.mother   = Marge
 //        
 //        var kids = [ Bart, Lisa ]
@@ -95,10 +95,10 @@ StartTest(function(t) {
 //        t.ok(lisaNode.object === Lisa, 'Lisa is the object of the `lisaNode`')
 //        
 //
-//        t.ok(lisaNode.data.farther === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
+//        t.ok(lisaNode.data.father === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
 //        t.ok(lisaNode.data.mother === margeNode, 'Lisa is the daugther of Marge (through the nodes relationship)')
 //        
-//        t.ok(bartNode.data.farther === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
+//        t.ok(bartNode.data.father === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
 //        t.ok(bartNode.data.mother === margeNode, 'Bart is the son of Marge (through the nodes relationship)')
 //        
 //        t.ok(homerNode.isRoot, 'Homer is in the root objects set')
@@ -149,7 +149,7 @@ StartTest(function(t) {
 //        t.ok(entry.ID == bartNode.ID, 'Entry has correct ID')
 //        t.ok(entry.className == 'Person', 'Entry has correct `className`')
 //        
-//        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
+//        t.ok(data.father.$ref == homerNode.ID, 'Entry has correct `father` ref')
 //        t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
 //
 //        
@@ -159,7 +159,7 @@ StartTest(function(t) {
 //        t.ok(entry.ID == lisaNode.ID, 'Entry has correct ID')
 //        t.ok(entry.className == 'Person', 'Entry has correct `className`')
 //        
-//        t.ok(data.farther.$ref == homerNode.ID, 'Entry has correct `farther` ref')
+//        t.ok(data.father.$ref == homerNode.ID, 'Entry has correct `father` ref')
 //        t.ok(data.mother.$ref == margeNode.ID, 'Entry has correct `mother` ref')
 //        
 //        
@@ -209,10 +209,10 @@ StartTest(function(t) {
 //        t.ok(lisaNode1.object === Lisa, 'Lisa is the object of the `lisaNode`')
 //        
 //
-//        t.ok(lisaNode1.data.farther === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
+//        t.ok(lisaNode1.data.father === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
 //        t.ok(lisaNode1.data.mother === margeNode, 'Lisa is the daugther of Marge (through the nodes relationship)')
 //        
-//        t.ok(bartNode1.data.farther === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
+//        t.ok(bartNode1.data.father === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
 //        t.ok(bartNode1.data.mother === margeNode, 'Bart is the son of Marge (through the nodes relationship)')
 //        
 //        t.ok(homerNode.isRoot, 'Homer is in the root objects set')

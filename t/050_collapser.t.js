@@ -35,7 +35,7 @@ StartTest(function(t) {
         Homer.spouse(Marge)
         Marge.spouse(Homer)
         
-        Bart.farther    = Lisa.farther  = Homer
+        Bart.father     = Lisa.father  = Homer
         Bart.mother     = Lisa.mother   = Marge
         
         var kids = [ Bart, Lisa ]
@@ -50,10 +50,12 @@ StartTest(function(t) {
             resolver            : new KiokuJS.Resolver.Standard()
         })
         
+        var scope       = new KiokuJS.Scope({
+            backend     : backend
+        })
+        
         var collapser = new KiokuJS.Collapser({
-            scope               : new KiokuJS.Scope({
-                backend     : backend
-            })
+            scope       : scope
         })
         
         t.ok(collapser, "KiokuJS collapser was instantiated")
@@ -66,7 +68,12 @@ StartTest(function(t) {
         
         t.ok(nodes.length == 5, 'Correct number of nodes is returned (`kids` array is shared, thus has its own node)')
         
+        Joose.A.each(nodes, scope.pinNode, scope)
         
+        
+        //======================================================================================================================================================================================================================================================
+        t.diag('Checking nodes structure')
+
         var homerNode   = nodes[0]
         var margeNode   = homerNode.data.spouse
         var kidsNode1   = homerNode.data.children
@@ -88,10 +95,10 @@ StartTest(function(t) {
         
         t.ok(margeNode.data.spouse === homerNode, 'Homer is a spouse of Marge (through the nodes relationship)')
 
-        t.ok(lisaNode.data.farther === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
+        t.ok(lisaNode.data.father === homerNode, 'Lisa is the daugther of Homer (through the nodes relationship)')
         t.ok(lisaNode.data.mother === margeNode, 'Lisa is the daugther of Marge (through the nodes relationship)')
         
-        t.ok(bartNode.data.farther === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
+        t.ok(bartNode.data.father === homerNode, 'Bart is the son of Homer (through the nodes relationship)')
         t.ok(bartNode.data.mother === margeNode, 'Bart is the son of Marge (through the nodes relationship)')
         
         t.ok(homerNode.isRoot, 'Homer is in the root objects set')
@@ -108,6 +115,16 @@ StartTest(function(t) {
         t.ok(margeNode.data.self === margeNode, 'Correct self-reference #2')
         t.ok(bartNode.data.self === bartNode, 'Correct self-reference #3')
         t.ok(lisaNode.data.self === lisaNode, 'Correct self-reference #4')
+        
+        
+        //======================================================================================================================================================================================================================================================
+        t.diag('`objectToNode` method of the scope')
+        
+        t.ok(scope.objectToNode(Homer) === homerNode, 'Correct object for Homer')
+        t.ok(scope.objectToNode(Marge) === margeNode, 'Correct object for Marge')
+        t.ok(scope.objectToNode(Bart) === bartNode, 'Correct object for Bart')
+        t.ok(scope.objectToNode(Lisa) === lisaNode, 'Correct object for Lisa')
+        t.ok(scope.objectToNode(Homer.children) === kidsNode1, 'Correct object for Homer.children')
         
         
         //======================================================================================================================================================================================================================================================
