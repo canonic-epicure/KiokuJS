@@ -60,12 +60,10 @@ StartTest(function(t) {
         t.diag('Setting up nodes & entries')
         
         var graphNode           = scope.objectToNode(graph)
-        var graphEntry          = backend.encode(graphNode.getEntry())
-        var graphData           = graphEntry.data
+        var graphData           = graphNode.data
         
         var arrayNode           = scope.objectToNode(array)
-        var arrayEntry          = backend.encode(arrayNode.getEntry())
-        var arrayData           = arrayEntry.data
+        var arrayData           = arrayNode.data
         
         
         t.ok(graphNode.isRoot, '`graphNode` is in the root objects set')

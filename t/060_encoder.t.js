@@ -2,7 +2,7 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS', 'KiokuJS.Backend.Hash', 'KiokuJS.Test.Person' ], function () {
+    use([ 'KiokuJS.Test.Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
@@ -146,103 +146,6 @@ StartTest(function(t) {
         t.ok(lisaData.father.$ref == homerNode.ID, "Lisa's entry has correct `father` ref")
         t.ok(lisaData.mother.$ref == margeNode.ID, "Lisa's entry has correct `mother` ref")
         
-        
-        
-//        //======================================================================================================================================================================================================================================================
-//        t.diag('Collapsing with intrinsic entries, repeating collapsing')
-//        
-//        Homer.children = [ Bart, Lisa ]
-//        Marge.children = [ Bart, Lisa ]
-//        
-//        
-//        var collapser = new KiokuJS.Collapser({
-//            scope               : new KiokuJS.Scope({
-//                backend     : backend
-//            })
-//        })
-//        
-//        
-//        var nodes = collapser.collapse({}, [ Homer ])
-//        
-//        
-//        //======================================================================================================================================================================================================================================================
-//        t.diag('Checking entries')
-//        
-//        var entry       = homerNode.getEntry()
-//        var data        = entry.data
-//        
-//        
-//        t.ok(data.children.className == 'Array', 'Entry has correct intrinsic `children` entry')
-//        
-//        t.ok(data.children.data[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
-//        t.ok(data.children.data[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
-//        
-//
-//        var entry       = margeNode.getEntry()
-//        var data        = entry.data
-//        
-//        
-//        t.ok(data.children.className == 'Array', 'Entry has correct intrinsic `children` entry')
-//        
-//        t.ok(data.children.data[0].$ref == bartNode.ID, 'Entry has correct ref to Bart node')
-//        t.ok(data.children.data[1].$ref == lisaNode.ID, 'Entry has correct ref to Lisa node')
-//        
-//        
-//        
-//        
-//        
-//        Class('Some.Class', {
-//            
-//            has : {
-//                $ref    : null,
-//                $entry  : null
-//            }
-//        })
-//
-//        
-//        //======================================================================================================================================================================================================================================================
-//        t.diag('Graph setup')
-//        
-//        var instance = new Some.Class()
-//        
-//        instance.$ref   = instance
-//        instance.$entry = '123'
-//        
-//        
-//        //======================================================================================================================================================================================================================================================
-//        t.diag('Collapsing')
-//
-//        var collapser = new KiokuJS.Collapser({
-//            resolver            : new KiokuJS.Resolver.Standard(),
-//            backend             : new KiokuJS.Backend.Hash()
-//        })
-//        
-//        
-//        var nodes = collapser.collapse({}, [ instance ])
-//        
-//        t.ok(nodes.length == 1, 'Correct number of nodes was returned')
-//        
-//        var node   = nodes[0]
-//
-//        t.ok(node.object === instance, '`node` has correct object')
-//        t.ok(node.isRoot, '`node` is in the root objects set')
-//        
-//        
-//        var refNode   = node.data.$ref
-//        
-//        t.ok(refNode === node, 'Self-referencing node was collapsed correctly')
-//        
-//        
-//        //======================================================================================================================================================================================================================================================
-//        t.diag('Checking entries')
-//        
-//        var entry       = node.getEntry()
-//        var entryData   = entry.data
-//        
-//        t.ok(entry.ID == node.ID, "Node's entry has correct ID")
-//        
-//        t.ok(entryData['public:$ref'].$ref == node.ID, 'Self-reference was correctly serialized')
-//        t.ok(entryData['public:$entry'] == '123', 'Entry with name `$entry` was correctly serialized')
         
         t.done()
         

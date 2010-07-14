@@ -2,7 +2,7 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-    use([ 'KiokuJS.Resolver.Standard', 'KiokuJS.Test.TypeMap.Person' ], function () {
+    use([ 'KiokuJS.Test.TypeMap.Person' ], function () {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Sanity')
