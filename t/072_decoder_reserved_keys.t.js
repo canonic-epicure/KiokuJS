@@ -64,21 +64,16 @@ StartTest(function(t) {
     
     
     t.isaOk(instanceData2.$ref, KiokuJS.Reference, 'Correct class for `instanceData2.$ref`')
+    t.ok(instanceData2.$ref.ID == instanceNode2.ID, 'Correct self-reference with reserved key')
     
+    t.isaOk(instanceData2.$entry, KiokuJS.Node, '`instanceData2.$ref` were decoded into separate Node')
     
-//    t.ok(instanceEntry.$entry, "Instance entry is marked with $entry")
-//    t.ok(instanceData[ 'public:$ref' ].$ref == instanceNode.ID, 'Correctly encoded reference to itself')
-//    
-//    t.ok(instanceData[ 'public:$entry' ].$entry, '`instance.$entry` entry is marked with $entry')
-//    
-//    var inner$EntryData = instanceData[ 'public:$entry' ].data
-//    
-//    t.ok(inner$EntryData[ 'public:$entry' ] == 123, '`instance.$entry.$entry` has correct value')
-//    
-//    t.ok(inner$EntryData[ 'public:$ref' ].$entry, '`instance.$entry` contains an entry for `$ref`')
-//    
-//    t.ok(inner$EntryData[ 'public:$ref' ].data[0] == '$ref', '`instance.$entry.$ref` contains has correct value')
+    var $entryData = instanceData2.$entry.data
     
+    t.ok($entryData.$entry == 123, 'Correct value for `instance.$entry.$entry`')
+    
+    t.isaOk($entryData.$ref, KiokuJS.Node, '`instance.$entry.$ref` were decoded into separate Node')
+    t.ok($entryData.$ref.data[0] == '$ref', 'Correct value for `instance.$entry.$ref[0]`')
     
     t.done()
 })    
