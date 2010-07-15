@@ -109,18 +109,33 @@ StartTest(function(t) {
         t.ok(lisaNode2 != lisaNode, 'New node for Lisa is different')
         t.ok(childrenNode2 != childrenNode, 'New node for children is different')
         
+        t.isaOk(homerNode2, KiokuJS.Node, "Entry decoded into Node #1")
+        t.isaOk(margeNode2, KiokuJS.Node, "Entry decoded into Node #2")
+        t.isaOk(childrenNode2, KiokuJS.Node, "Entry decoded into Node #3")
+        
 
-//        t.ok(homerEntry.$entry, "Homer's entry is marked with $entry")
-//        t.ok(homerEntry.ID == homerNode.ID, "Homer's entry has correct ID")
-//        
-//        t.ok(homerEntry.className == 'KiokuJS.Test.Person', "Homer's entry has correct `className`")
-//        
-//        t.ok(homerData.name == 'Homer Simpson', "Homer's entry has correct name")
-//        t.ok(homerData.self.$ref == homerEntry.ID, "Homer's entry has correct self-reference")
-//        t.ok(homerData.spouse.$ref == margeNode.ID, "Homer's entry has correct `spouse` ref")
-//        t.ok(homerData.children.$ref == childrenNode.ID, "Homer's entry has correct `children` ref")
-//
-//        
+        //======================================================================================================================================================================================================================================================
+        t.diag('Homer')
+        
+        var homerData2 = homerNode2.data
+        
+        t.ok(!homerNode2.$entry, "Homer's new node has no $entry marker")
+        t.ok(homerNode2.ID == homerNode.ID, "IDs are identical")
+        
+        t.ok(homerNode2.className == 'KiokuJS.Test.Person', "New Homer's node has correct `className`")
+        
+        t.ok(homerData2.name == 'Homer Simpson', "Homer's new node has correct name")
+        
+        t.isaOk(homerData2.self, KiokuJS.Reference, ".. `self` value has correct class")
+        t.ok(homerData2.self.ID == homerNode2.ID, ".. and it refer to the node itself")
+        
+        t.isaOk(homerData2.spouse, KiokuJS.Reference, ".. `spouse` value has correct class")
+        t.ok(homerData2.spouse.ID == margeNode2.ID, ".. and it refer to the Marge node")
+
+        t.isaOk(homerData2.children, KiokuJS.Reference, ".. `children` value has correct class")
+        t.ok(homerData2.children.ID == childrenNode2.ID, ".. and it refer to the childrenNode2 node")
+        
+        
 //        t.ok(margeEntry.$entry, "Marge's entry is marked with $entry")
 //        t.ok(margeEntry.ID == margeNode.ID, "Marge's entry has correct ID")
 //        
