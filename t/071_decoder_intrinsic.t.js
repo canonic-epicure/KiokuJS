@@ -60,17 +60,14 @@ StartTest(function(t) {
         t.diag('Setting up nodes & entries')
         
         var graphNode           = scope.objectToNode(graph)
-        var graphEntry          = backend.encodeNode(graphNode)
-        
         var arrayNode           = scope.objectToNode(array)
-        var arrayEntry          = backend.encodeNode(arrayNode)
         
 
         //======================================================================================================================================================================================================================================================
         t.diag('Decoding entries')
         
-        var graphNode2          = backend.decodeEntry(graphEntry)
-        var arrayNode2          = backend.decodeEntry(arrayEntry)
+        var graphNode2          = backend.deserializeNode(backend.serializeNode(graphNode))
+        var arrayNode2          = backend.deserializeNode(backend.serializeNode(arrayNode))
         
         var graphData2          = graphNode2.data
         var arrayData2          = arrayNode2.data
@@ -85,8 +82,17 @@ StartTest(function(t) {
 
         t.ok(valueNode1 != valueNode2 && valueNode2 != valueNode3, 'Value nodes are all different')
         
+        t.ok(!valueNode1.isFirstClass(), 'Value nodes #1 is intrinsic')
+        t.ok(!valueNode2.isFirstClass(), 'Value nodes #2 is intrinsic')
+        t.ok(!valueNode3.isFirstClass(), 'Value nodes #3 is intrinsic')
         
-//        t.ok(graphData2.)
+        
+        t.isaOk(graphData2.data2, KiokuJS.Reference, 'Correct class of `data2` in graphNode2')
+        t.ok(graphData2.data2.ID == arrayNode2.ID, 'Correct reference to `arrayNode2` in `data2`')
+        
+        t.ok(valueNode1.data.value == 'someValue', 'Correct data in valueNode1')
+        t.ok(valueNode2.data.value == 'someValue', 'Correct data in valueNode2')
+        t.ok(valueNode3.data.value == 'someValue', 'Correct data in valueNode3')
         
         
         t.done()

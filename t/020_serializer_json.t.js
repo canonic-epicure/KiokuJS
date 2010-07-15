@@ -42,7 +42,15 @@ StartTest(function(t) {
     
     t.ok(serializer.serialize({}) == '{}', 'Empty object serialized ok')
     t.ok(serializer.serialize({ foo : 'bar', bar : [ 'baz', 'zab' ]}) == '{"foo":"bar","bar":["baz","zab"]}', 'Object serialized ok')
-        
+
+    
+    //======================================================================================================================================================================================================================================================
+    t.diag('Repeating objects')
+    
+    var obj = { foo : 'bar' }
+    
+    t.ok(serializer.serialize([ obj, obj ]) == '[{"foo":"bar"},{"foo":"bar"}]', 'Repeating objects serialized ok')
+    
         
     t.done()
 })    
