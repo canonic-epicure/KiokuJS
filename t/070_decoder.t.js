@@ -75,29 +75,20 @@ StartTest(function(t) {
         t.diag('Setting up nodes & entries')
         
         var homerNode           = scope.objectToNode(Homer)
-        var homerEntry          = backend.encodeNode(homerNode)
-        
         var margeNode           = scope.objectToNode(Marge)
-        var margeEntry          = backend.encodeNode(margeNode)
-
         var bartNode            = scope.objectToNode(Bart)
-        var bartEntry           = backend.encodeNode(bartNode)
-
         var lisaNode            = scope.objectToNode(Lisa)
-        var lisaEntry           = backend.encodeNode(lisaNode)
-        
         var childrenNode        = scope.objectToNode(kids)
-        var childrenEntry       = backend.encodeNode(childrenNode)
 
         
         //======================================================================================================================================================================================================================================================
         t.diag('Decoding entries')
         
-        var homerNode2          = backend.decodeEntry(homerEntry)
-        var margeNode2          = backend.decodeEntry(margeEntry)
-        var bartNode2           = backend.decodeEntry(bartEntry)
-        var lisaNode2           = backend.decodeEntry(lisaEntry)
-        var childrenNode2       = backend.decodeEntry(childrenEntry)
+        var homerNode2          = backend.deserializeNode(backend.serializeNode(homerNode))
+        var margeNode2          = backend.deserializeNode(backend.serializeNode(margeNode))
+        var bartNode2           = backend.deserializeNode(backend.serializeNode(bartNode))
+        var lisaNode2           = backend.deserializeNode(backend.serializeNode(lisaNode))
+        var childrenNode2       = backend.deserializeNode(backend.serializeNode(childrenNode))
         
         
         //======================================================================================================================================================================================================================================================
