@@ -89,6 +89,8 @@ StartTest(function(t) {
         var graph2      = scope2.idToObject(graphNode.ID)
         var array2      = scope2.idToObject(arrayNode.ID)
         
+        t.ok(graph2 != graph && array2 != array, 'New objects were created')
+        
         
         //======================================================================================================================================================================================================================================================
         t.diag('Checking newly created objects')
