@@ -78,7 +78,7 @@ StartTest(function(t) {
             t.ok(!node.isLive(), 'Round-tripped nodes have no objects')
         })
         
-        Joose.A.each(nodes2, scope2.pinNode, scope)
+        Joose.A.each(nodes2, scope2.pinNode, scope2)
 
         
         //======================================================================================================================================================================================================================================================
@@ -92,6 +92,27 @@ StartTest(function(t) {
         
         //======================================================================================================================================================================================================================================================
         t.diag('Checking newly created objects')
+        
+        t.isaOk(graph2, Object, 'Correct class for `graph2`')
+        t.isaOk(array2, Array, 'Correct class for `array2`')
+        
+        t.ok(graph2.data2 == array2, 'Correct reference to 1st class objects')
+        
+        
+        var value1      = graph2.data1
+        var value2      = array2[0]
+        var value3      = array2[1]
+        
+        t.isaOk(value1, KiokuJS.Test.ValueWrapper, 'Correct class for `value1`')
+        t.isaOk(value2, KiokuJS.Test.ValueWrapper, 'Correct class for `value2`')
+        t.isaOk(value3, KiokuJS.Test.ValueWrapper, 'Correct class for `value3`')
+        
+        
+        t.ok(value1 != value2 && value2 != value3, 'All values are different')
+        
+        t.ok(value1.value == 'someValue', 'Correct value for `value1` instance')
+        t.ok(value2.value == 'someValue', 'Correct value for `value2` instance')
+        t.ok(value3.value == 'someValue', 'Correct value for `value3` instance')
         
         
         t.done()
