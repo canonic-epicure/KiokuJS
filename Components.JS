@@ -2,6 +2,11 @@ COMPONENTS = {
     
     "Core" : [
         "KiokuJS.Reference",
+        
+        "KiokuJS.Exception",
+        "KiokuJS.Exception.Network",
+        "KiokuJS.Exception.Format",
+        
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
         

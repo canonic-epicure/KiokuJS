@@ -9,12 +9,12 @@ StartTest(function(t) {
     t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
     
     new KiokuJS.Test({
-        t       : t,
+        t           : t,
         
-        init    : function () {
-            return KiokuJS.connect({
+        connect     : function () {
+            this.CONTINUE(KiokuJS.connect({
                 backend : new KiokuJS.Backend.Hash()
-            })
+            }))
         }
         
     }).runAllFixtures().andThen(function () {
