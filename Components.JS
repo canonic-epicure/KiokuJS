@@ -38,47 +38,38 @@ COMPONENTS = {
     
     
     "Test" : [
+        "+Core",
+        
+        "KiokuJS.Test.Person",
+        
         "KiokuJS.Test.Fixture",
+        "KiokuJS.Test.Fixture.ObjectGraph",
         "KiokuJS.Test"
     ],
     
     
-    "WebBundle" : [
+    "WebPrereq" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
+        
         "jsan:JooseX.SimpleRequest",
         "jsan:Task.JooseX.Namespace.Depended.Web",
+        
         "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
-        "jsan:Data.Visitor",
-        
-        "+Core"    
+        "jsan:Data.Visitor"
     ],
     
     
-    "NodeJSBundle" : [
+    "NodeJSPrereq" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
+        
         "jsan:Task.JooseX.Namespace.Depended.NodeJS",
+        
         "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
-        "jsan:Data.Visitor",
-        
-        "+Core"    
-    ],
-    
-    
-    "WebTest" : [
-        "+WebBundle",
-        
-        "+Test"
-    ],
-    
-    
-    "NodeJSTest" : [
-        "+NodeJSBundle",
-        
-        "+Test"
+        "jsan:Data.Visitor"
     ]
 } 
 
