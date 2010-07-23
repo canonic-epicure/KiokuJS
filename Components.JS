@@ -39,7 +39,6 @@ COMPONENTS = {
     
     "Test" : [
         "KiokuJS.Test.Fixture",
-        "KiokuJS.Test.Fixture.ObjectGraph",
         "KiokuJS.Test"
     ],
     
