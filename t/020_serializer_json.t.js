@@ -22,7 +22,7 @@ StartTest(function(t) {
     t.ok(serializer.serialize(4.5)  === "4.5", 'Number value serialized ok #2')
     
     t.ok(serializer.serialize(null)  === "null", '`null` value serialized ok')
-    t.ok(serializer.serialize(undefined)  === "undefined", '`undefined` value serialized ok')
+    t.ok(serializer.serialize(undefined)  === "null", '`undefined` value serialized ok')
     
     
     //======================================================================================================================================================================================================================================================
@@ -42,6 +42,8 @@ StartTest(function(t) {
     
     t.ok(serializer.serialize({}) == '{}', 'Empty object serialized ok')
     t.ok(serializer.serialize({ foo : 'bar', bar : [ 'baz', 'zab' ]}) == '{"foo":"bar","bar":["baz","zab"]}', 'Object serialized ok')
+    
+    t.ok(serializer.serialize({ a : undefined }) == '{"a":null}', '"Undefined" entry seriazlied as `null`')
 
     
     //======================================================================================================================================================================================================================================================
