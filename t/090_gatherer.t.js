@@ -3,7 +3,7 @@ StartTest(function(t) {
     //======================================================================================================================================================================================================================================================
     t.diag('Sanity')
     
-    t.ok(KiokuJS.Linker.Gatherer,   "'KiokuJS.Linker.Gatherer' is here")
+    t.ok(KiokuJS.Linker.RefGatherer,   "'KiokuJS.Linker.RefGatherer' is here")
     t.ok(KiokuJS.Reference,         "'KiokuJS.Reference' is here")
 
     
@@ -29,7 +29,7 @@ StartTest(function(t) {
     }
     
     
-    var references = KiokuJS.Linker.Gatherer.gatherReferences(graph)
+    var references = KiokuJS.Linker.RefGatherer.gatherReferences(graph)
     
     t.ok(references.length == 2, 'Correct number of references returned')
     

@@ -24,9 +24,9 @@ COMPONENTS = {
         "KiokuJS.Node",
         
         "KiokuJS.Collapser.Encoder",
-        "KiokuJS.Collapser.Decoder",
+        "KiokuJS.Linker.Decoder",
         
-        "KiokuJS.Linker.Gatherer",
+        "KiokuJS.Linker.RefGatherer",
         "KiokuJS.Linker.Expander",
         
         "KiokuJS.Backend.Role.SkipFixture",
