@@ -7,6 +7,8 @@ COMPONENTS = {
         "KiokuJS.Exception.Network",
         "KiokuJS.Exception.Format",
         "KiokuJS.Exception.Overwrite",
+        "KiokuJS.Exception.Update",
+        "KiokuJS.Exception.Remove",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
@@ -31,9 +33,12 @@ COMPONENTS = {
         "KiokuJS.Linker.Expander",
         
         "KiokuJS.Backend.Role.SkipFixture",
+        "KiokuJS.Backend.Feature.Overwrite",
+        "KiokuJS.Backend.Feature.Update",
         
         "KiokuJS.Backend",
         "KiokuJS.Backend.Hash",
+        
         
         "KiokuJS.Collapser",
         "KiokuJS.Linker",
