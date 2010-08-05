@@ -56,6 +56,7 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture",
         "KiokuJS.Test.Fixture.ObjectGraph",
         "KiokuJS.Test.Fixture.Overwrite",
+        "KiokuJS.Test.Fixture.Update",
         "KiokuJS.Test"
     ],
     
