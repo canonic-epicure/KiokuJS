@@ -6,6 +6,7 @@ COMPONENTS = {
         "KiokuJS.Exception",
         "KiokuJS.Exception.Network",
         "KiokuJS.Exception.Format",
+        "KiokuJS.Exception.Overwrite",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
@@ -49,6 +50,7 @@ COMPONENTS = {
         
         "KiokuJS.Test.Fixture",
         "KiokuJS.Test.Fixture.ObjectGraph",
+        "KiokuJS.Test.Fixture.Overwrite",
         "KiokuJS.Test"
     ],
     

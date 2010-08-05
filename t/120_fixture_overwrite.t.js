@@ -11,6 +11,8 @@ StartTest(function(t) {
     new KiokuJS.Test({
         t           : t,
         
+        fixtures    : [ 'Overwrite' ],
+        
         connect     : function () {
             this.CONTINUE(KiokuJS.connect({
                 backend : new KiokuJS.Backend.Hash()

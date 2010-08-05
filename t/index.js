@@ -53,5 +53,6 @@ Harness.start(
     '082_expander_reserved_keys.t.js',
     '090_gatherer.t.js',
     '100_backend_hash_sanity.t.js',
-    '110_backend_hash_fixtures.t.js'
+    '110_fixture_object_graph.t.js',
+    '120_fixture_overwrite.t.js'
 )
