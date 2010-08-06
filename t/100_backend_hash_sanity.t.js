@@ -60,12 +60,10 @@ StartTest(function(t) {
             //======================================================================================================================================================================================================================================================
             t.diag('Get')
             
-            backend.get([ 2, 1, 10 ]).andThen(function (res) {
+            backend.get([ 2, 1 ]).andThen(function (res) {
             
                 t.ok(res[0].data.bar == 'foo2', 'Entry with ID = 2, retrieved correctly')
                 t.ok(res[1].data.foo == 'foo1', 'Entry with ID = 1, retrieved correctly')
-                t.ok(res[2] == null, 'There is no entry with ID = 10')
-
                 
                 backend.remove([ 1, 2 ]).andThen(function () {
                 

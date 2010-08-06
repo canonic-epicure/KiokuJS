@@ -55,5 +55,6 @@ Harness.start(
     '100_backend_hash_sanity.t.js',
     '110_fixture_object_graph.t.js',
     '120_fixture_overwrite.t.js',
-    '130_fixture_update.t.js'
+    '130_fixture_update.t.js',
+    '140_fixture_remove.t.js'
 )
