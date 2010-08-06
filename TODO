@@ -6,11 +6,14 @@ TASKS
 
 - serialization of dates (test)
 - deserialization tests
+- serialization of `undefined` (currently as null)
 
 - KiokuJS.Serializer.JSON.BuiltIn (JSON.stringify)
 
 
 - versioning
+
+- sanitize exceptions (add additional meaningful properties, like `id` where appropriate) 
 
 
 DONE

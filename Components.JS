@@ -9,6 +9,7 @@ COMPONENTS = {
         "KiokuJS.Exception.Overwrite",
         "KiokuJS.Exception.Update",
         "KiokuJS.Exception.Remove",
+        "KiokuJS.Exception.LookUp",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
