@@ -10,6 +10,7 @@ COMPONENTS = {
         "KiokuJS.Exception.Update",
         "KiokuJS.Exception.Remove",
         "KiokuJS.Exception.LookUp",
+        "KiokuJS.Exception.Conflict",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
@@ -58,6 +59,7 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture.ObjectGraph",
         "KiokuJS.Test.Fixture.Overwrite",
         "KiokuJS.Test.Fixture.Update",
+        "KiokuJS.Test.Fixture.Remove",
         "KiokuJS.Test"
     ],
     
