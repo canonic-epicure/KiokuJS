@@ -11,6 +11,8 @@ TASKS
 - KiokuJS.Serializer.JSON.BuiltIn (JSON.stringify)
 
 
+- scope...
+
 - versioning
 
 - sanitize exceptions (add additional meaningful properties, like `id` where appropriate) 
