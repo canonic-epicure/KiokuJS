@@ -66,14 +66,11 @@ StartTest(function(t) {
     t.isaOk(instanceData2.$ref, KiokuJS.Reference, 'Correct class for `instanceData2.$ref`')
     t.ok(instanceData2.$ref.ID == instanceNode2.ID, 'Correct self-reference with reserved key')
     
-    t.isaOk(instanceData2.$entry, KiokuJS.Node, '`instanceData2.$ref` were decoded into separate Node')
-    
-    var $entryData = instanceData2.$entry.data
+    var $entryData = instanceData2.$entry
     
     t.ok($entryData.$entry == 123, 'Correct value for `instance.$entry.$entry`')
     
-    t.isaOk($entryData.$ref, KiokuJS.Node, '`instance.$entry.$ref` were decoded into separate Node')
-    t.ok($entryData.$ref.data[0] == '$ref', 'Correct value for `instance.$entry.$ref[0]`')
+    t.ok($entryData.$ref[0] == '$ref', 'Correct value for `instance.$entry.$ref[0]`')
     
     t.done()
 })    

@@ -61,15 +61,12 @@ StartTest(function(t) {
     t.ok(instanceEntry.$entry, "Instance entry is marked with $entry")
     t.ok(instanceData[ 'public:$ref' ].$ref == instanceNode.ID, 'Correctly encoded reference to itself')
     
-    t.ok(instanceData[ 'public:$entry' ].$entry, '`instance.$entry` entry is marked with $entry')
     
-    var inner$EntryData = instanceData[ 'public:$entry' ].data
     
+    var inner$EntryData = instanceData[ 'public:$entry' ]
+    
+    t.ok(inner$EntryData[ 'public:$ref' ][ 0 ] == '$ref', '`instance.$entry.$ref` has correct value')
     t.ok(inner$EntryData[ 'public:$entry' ] == 123, '`instance.$entry.$entry` has correct value')
-    
-    t.ok(inner$EntryData[ 'public:$ref' ].$entry, '`instance.$entry` contains an entry for `$ref`')
-    
-    t.ok(inner$EntryData[ 'public:$ref' ].data[0] == '$ref', '`instance.$entry.$ref` has correct value')
     
     
     t.done()
