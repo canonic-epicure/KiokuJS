@@ -54,6 +54,7 @@ COMPONENTS = {
         "+Core",
         
         "KiokuJS.Test.Person",
+        "KiokuJS.Test.Vertex",
         
         "KiokuJS.Test.Fixture",
         "KiokuJS.Test.Fixture.ObjectGraph",
