@@ -58,10 +58,11 @@ COMPONENTS = {
         
         "KiokuJS.Test.Fixture",
         "KiokuJS.Test.Fixture.ObjectGraph",
-        "KiokuJS.Test.Fixture.Overwrite",
         "KiokuJS.Test.Fixture.Update",
         "KiokuJS.Test.Fixture.Remove",
         "KiokuJS.Test.Fixture.Refresh",
+        
+        "KiokuJS.Test.Fixture.BackendFeature.Overwrite",
         
         "KiokuJS.Test.Fixture.StressLoad.Tree",
         
