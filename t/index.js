@@ -45,6 +45,7 @@ Harness.start(
     '060_encoder.t.js',
     '061_encoder_intrinsic.t.js',
     '062_encoder_reserved_keys.t.js',
+    '063_encoder_intrinsic_native.t.js',
     '070_decoder.t.js',
     '071_decoder_intrinsic.t.js',
     '072_decoder_reserved_keys.t.js',

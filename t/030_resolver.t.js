@@ -60,7 +60,7 @@ StartTest(function(t) {
             }
         ])
         
-        resolver.resolve([ 'KiokuJS.Test.ValueWrapper' ]).then(function (res) {
+        resolver.resolve([ 'KiokuJS.Test.ValueWrapper' ]).andThen(function (res) {
             
             t.ok(KiokuJS.Test.ValueWrapper, "Class 'KiokuJS.Test.ValueWrapper' was loaded")
             
@@ -83,6 +83,6 @@ StartTest(function(t) {
             
             t.done()
             
-        }).now()
+        })
     })
 })    

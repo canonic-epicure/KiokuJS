@@ -17,28 +17,19 @@ StartTest(function(t) {
     
     t.ok(collapser, "KiokuJS collapser was instantiated")
         
-
-        
-    Class('Some.Class', {
-        
-        has : {
-            $ref    : null,
-            $entry  : null
-        }
-    })
-
         
     //======================================================================================================================================================================================================================================================
     t.diag('Graph setup')
     
-    var instance = new Some.Class()
-    
-    instance.$ref   = instance
-    instance.$entry = {
-        $ref    : [ '$ref' ],
-        $entry  : 123
-    }
+    var instance = {
         
+        data1   : [ 1, 2, 3 ],
+        data2   : [ 'foo', 'bar' ],
+        data3   : {
+            foo : 'baz'
+        }
+    }
+    
         
     //======================================================================================================================================================================================================================================================
     t.diag('Collapsing')
@@ -59,17 +50,25 @@ StartTest(function(t) {
         
     
     t.ok(instanceEntry.$entry, "Instance entry is marked with $entry")
-    t.ok(instanceData[ 'public:$ref' ].$ref == instanceNode.ID, 'Correctly encoded reference to itself')
     
-    t.ok(instanceData[ 'public:$entry' ].$entry, '`instance.$entry` entry is marked with $entry')
+    t.ok(instanceData.data1 instanceof Array, 'Correctly encoded non-first class native array #1')
+    t.ok(instanceData.data2 instanceof Array, 'Correctly encoded non-first class native array #2')
+    t.ok(instanceData.data3 instanceof Object, 'Correctly encoded non-first class native object')
     
-    var inner$EntryData = instanceData[ 'public:$entry' ].data
+    var data1 = instanceData.data1
     
-    t.ok(inner$EntryData[ 'public:$entry' ] == 123, '`instance.$entry.$entry` has correct value')
+    t.ok(data1[ 0 ] == 1 && data1[ 1 ] == 2 && data1[ 2 ] == 3, 'Correct content for `data1`')
+
     
-    t.ok(inner$EntryData[ 'public:$ref' ].$entry, '`instance.$entry` contains an entry for `$ref`')
     
-    t.ok(inner$EntryData[ 'public:$ref' ].data[0] == '$ref', '`instance.$entry.$ref` has correct value')
+    var data2 = instanceData.data2
+    
+    t.ok(data2[ 0 ] == 'foo' && data2[ 1 ] == 'bar', 'Correct content for `data2`')
+    
+    
+    var data3 = instanceData.data3
+    
+    t.ok(data3.foo == 'baz', 'Correct content for `data3`')
     
     
     t.done()
