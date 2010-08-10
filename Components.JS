@@ -15,8 +15,9 @@ COMPONENTS = {
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
         
-        "KiokuJS.TypeMap",
         "KiokuJS.TypeMap.Role.NoDeps",
+        
+        "KiokuJS.TypeMap",
         "KiokuJS.TypeMap.Array",
         "KiokuJS.TypeMap.Object",
         "KiokuJS.TypeMap.Joose",
@@ -54,6 +55,7 @@ COMPONENTS = {
         "+Core",
         
         "KiokuJS.Test.Person",
+        "KiokuJS.Test.Person.Hobby",
         "KiokuJS.Test.Vertex",
         
         "KiokuJS.Test.Fixture",
