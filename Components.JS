@@ -70,6 +70,8 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture.Update",
         "KiokuJS.Test.Fixture.Remove",
         "KiokuJS.Test.Fixture.Refresh",
+        "KiokuJS.Test.Fixture.Traits",
+        "KiokuJS.Test.Fixture.Intrinsic",
         
         "KiokuJS.Test.Fixture.BackendFeature.Overwrite",
         
