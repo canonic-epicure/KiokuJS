@@ -13,10 +13,15 @@ COMPONENTS = {
         "KiokuJS.Exception.Conflict",
         
         "KiokuJS.Meta.Aspect.AfterCollapse",
+        "KiokuJS.Meta.Aspect.AfterExpand",
         
         "KiokuJS.Meta.Attribute.Intrinsic",
+        "KiokuJS.Meta.Attribute.Skip",
         
         "KiokuJS.Meta.Class.Intrinsic",
+        
+        "KiokuJS.Feature.OwnID",
+        "KiokuJS.Feature.Immutable",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
