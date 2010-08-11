@@ -12,6 +12,12 @@ COMPONENTS = {
         "KiokuJS.Exception.LookUp",
         "KiokuJS.Exception.Conflict",
         
+        "KiokuJS.Meta.Aspect.AfterCollapse",
+        
+        "KiokuJS.Meta.Attribute.Intrinsic",
+        
+        "KiokuJS.Meta.Class.Intrinsic",
+        
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
         
