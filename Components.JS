@@ -18,6 +18,7 @@ COMPONENTS = {
         "KiokuJS.TypeMap.Role.NoDeps",
         
         "KiokuJS.TypeMap",
+        "KiokuJS.TypeMap.Function",
         "KiokuJS.TypeMap.Array",
         "KiokuJS.TypeMap.Object",
         "KiokuJS.TypeMap.Joose",

@@ -18,6 +18,8 @@ StartTest(function(t) {
     t.ok(serializer.serialize('y\\o') == '"y\\o"', 'String value serialized ok #2')
     t.ok(serializer.serialize('""') == '"\\"\\""', 'String value serialized ok #3')
     
+    t.ok(serializer.serialize('foo\nbar') == '"foo\\nbar"', 'String value serialized ok #4')
+    
     t.ok(serializer.serialize(2)    === "2", 'Number value serialized ok #1')
     t.ok(serializer.serialize(4.5)  === "4.5", 'Number value serialized ok #2')
     
