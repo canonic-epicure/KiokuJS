@@ -46,38 +46,38 @@ StartTest(function(t) {
     var nodes = collapser.collapse({}, [ instance ])
     
     t.ok(nodes.length == 1, 'Correct number of nodes was returned')
-        
-    Joose.A.each(nodes, scope.pinNode, scope)
     
     
     //======================================================================================================================================================================================================================================================
     t.diag('Setting up nodes & entries')
     
-    var instanceNode            = scope.objectToNode(instance)
+    var instanceID   = nodes[ 0 ].ID
     
-    var scope2       = new KiokuJS.Scope({
-        backend     : backend
-    })
-    
-    
+
     //======================================================================================================================================================================================================================================================
     t.diag('Round-triping nodes')
     
-    var nodes2           = backend.deserializeNodes(backend.serializeNodes(nodes))
+    var nodes2          = backend.deserializeNodes(backend.serializeNodes(nodes))
+    var nodesByID       = {}
     
     Joose.A.each(nodes2, function (node) {
         t.ok(!node.isLive(), 'Round-tripped nodes have no objects')
+        
+        nodesByID[ node.ID ] = node
     })
-    
-    Joose.A.each(nodes2, scope2.pinNode, scope2)
     
 
     //======================================================================================================================================================================================================================================================
     t.diag('Animating nodes')
     
-    KiokuJS.Linker.Expander.expandNodes(nodes2, scope2)
+    var linker = new KiokuJS.Linker({
+        nodes   : nodesByID,
+        scope   : scope
+    })
     
-    var instance2      = scope2.idToObject(instanceNode.ID)
+    linker.animateNodes()
+    
+    var instance2      = scope.idToObject(instanceID)
     
     
     //======================================================================================================================================================================================================================================================

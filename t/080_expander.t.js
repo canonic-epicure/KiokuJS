@@ -70,23 +70,31 @@ StartTest(function(t) {
         t.ok(nodes.length == 5, 'Correct number of nodes is returned (`kids` array is shared, thus has its own node)')
         
         var homerID = nodes[0].ID
+
         
         //======================================================================================================================================================================================================================================================
         t.diag('Round-triping nodes')
         
         var nodes2           = backend.deserializeNodes(backend.serializeNodes(nodes))
         
+        var nodesByID = {}
+        
         Joose.A.each(nodes2, function (node) {
             t.ok(!node.isLive(), 'Round-tripped nodes have no objects')
+            
+            nodesByID[ node.ID ] = node
         })
         
-        Joose.A.each(nodes2, scope.pinNode, scope)
-
         
         //======================================================================================================================================================================================================================================================
         t.diag('Animating nodes')
         
-        KiokuJS.Linker.Expander.expandNodes(nodes2, scope)
+        var linker = new KiokuJS.Linker({
+            nodes   : nodesByID,
+            scope   : scope
+        })
+        
+        linker.animateNodes()
         
         
         //======================================================================================================================================================================================================================================================
