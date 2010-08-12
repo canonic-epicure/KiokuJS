@@ -12,16 +12,16 @@ COMPONENTS = {
         "KiokuJS.Exception.LookUp",
         "KiokuJS.Exception.Conflict",
         
-        "KiokuJS.Meta.Aspect.AfterCollapse",
-        "KiokuJS.Meta.Aspect.AfterExpand",
+        "KiokuJS.Aspect.AfterCollapse",
+        "KiokuJS.Aspect.AfterExpand",
         
-        "KiokuJS.Meta.Attribute.Intrinsic",
-        "KiokuJS.Meta.Attribute.Skip",
+        "KiokuJS.Feature.Attribute.Intrinsic",
+        "KiokuJS.Feature.Attribute.Skip",
         
-        "KiokuJS.Meta.Class.Intrinsic",
+        "KiokuJS.Feature.Class.Intrinsic",
         
-        "KiokuJS.Feature.OwnID",
-        "KiokuJS.Feature.Immutable",
+        "KiokuJS.Feature.Class.OwnID",
+        "KiokuJS.Feature.Class.Immutable",
         
         "KiokuJS.Role.Serializer",
         "KiokuJS.Serializer.JSON",
