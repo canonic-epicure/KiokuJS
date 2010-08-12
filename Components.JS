@@ -77,6 +77,7 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture.Refresh",
         "KiokuJS.Test.Fixture.Traits",
         "KiokuJS.Test.Fixture.Intrinsic",
+        "KiokuJS.Test.Fixture.Immutable",
         
         "KiokuJS.Test.Fixture.BackendFeature.Overwrite",
         
