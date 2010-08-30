@@ -37,7 +37,6 @@ Harness.configure({
 
 Harness.start(
     '010_sanity.t.js',
-    '020_serializer_json.t.js',
     '030_resolver.t.js',
     
     '050_collapser.t.js',

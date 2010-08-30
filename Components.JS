@@ -96,7 +96,8 @@ COMPONENTS = {
         
         "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
-        "jsan:Data.Visitor"
+        "jsan:Data.Visitor",
+        "jsan:Task.JSON2.Bundle"
     ],
     
     
@@ -108,7 +109,8 @@ COMPONENTS = {
         
         "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
-        "jsan:Data.Visitor"
+        "jsan:Data.Visitor",
+        "jsan:Task.JSON2.Bundle"
     ]
 } 
 
