@@ -21,6 +21,7 @@ COMPONENTS = {
         "KiokuJS.Feature.Class.Intrinsic",
         
         "KiokuJS.Feature.Class.OwnID",
+        "KiokuJS.Feature.Class.OwnUUID",
         "KiokuJS.Feature.Class.Immutable",
         
         "KiokuJS.Role.Serializer",
@@ -29,6 +30,7 @@ COMPONENTS = {
         "KiokuJS.TypeMap.Role.NoDeps",
         
         "KiokuJS.TypeMap",
+        "KiokuJS.TypeMap.Date",
         "KiokuJS.TypeMap.Function",
         "KiokuJS.TypeMap.Array",
         "KiokuJS.TypeMap.Object",
