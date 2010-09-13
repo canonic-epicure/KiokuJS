@@ -36,7 +36,7 @@ StartTest(function(t) {
         Marge.spouse(Homer)
         
         Bart.father     = Lisa.father  = Homer
-        Bart.mother     = Lisa.mother   = Marge
+        Bart.mother     = Lisa.mother  = Marge
         
         var kids = [ Bart, Lisa ]
         
@@ -80,10 +80,9 @@ StartTest(function(t) {
             isShallow   : true
         })
 
-        var nodes = collapser.collapse({}, [ Homer ])
+        var nodes = collapser.collapse({}, [ Homer, Lisa ])
         
-        t.ok(nodes.length == 1, 'Correct number of nodes is returned (only the Homer itself)')
-
+        t.ok(nodes.length == 2, 'Correct number of nodes is returned (only the Homer and Lisa)')
         
         t.done()
         
