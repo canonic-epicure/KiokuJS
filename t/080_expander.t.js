@@ -47,13 +47,8 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Collapser setup')
         
-        var backend     = new KiokuJS.Backend.Hash({
-            resolver            : new KiokuJS.Resolver.Standard()
-        })
-        
-        var scope       = new KiokuJS.Scope({
-            backend     : backend
-        })
+        var backend     = new KiokuJS.Backend.Hash()
+        var scope       = backend.newScope()
         
         var collapser = new KiokuJS.Collapser({
             scope       : scope

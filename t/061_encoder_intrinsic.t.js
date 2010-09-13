@@ -36,9 +36,7 @@ StartTest(function(t) {
             ])
         })
         
-        var scope       = new KiokuJS.Scope({
-            backend     : backend
-        })
+        var scope       = backend.newScope()
         
         var collapser = new KiokuJS.Collapser({
             scope       : scope

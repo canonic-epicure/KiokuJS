@@ -5,8 +5,15 @@ StartTest(function(t) {
     
     t.ok(KiokuJS.Backend.Hash, "KiokuJS.Backend.Hash is here")
     t.ok(KiokuJS.Node, "KiokuJS.Node is here")
+    t.ok(KiokuJS.Resolver.Standard, "KiokuJS.Resolver.Standard is here")
     
-    var backend = new KiokuJS.Backend.Hash()
+    var resolver = new KiokuJS.Resolver.Standard()
+    
+    t.ok(resolver, "KiokuJS.Resolver.Standard was instantiated")
+    
+    var backend = new KiokuJS.Backend.Hash({
+        resolver : resolver
+    })
     
     t.ok(backend, "KiokuJS.Backend.Hash was instantiated")
     
@@ -23,7 +30,7 @@ StartTest(function(t) {
             
             className   : 'Object',
             
-            resolver     : backend.resolver,
+            resolver     : resolver,
             
             data        : { foo : "foo1" } 
         }),
@@ -33,7 +40,7 @@ StartTest(function(t) {
             
             className   : 'Object',
             
-            resolver     : backend.resolver,
+            resolver     : resolver,
             
             data        : { bar : "foo2" } 
         })
