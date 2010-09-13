@@ -80,6 +80,7 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture.Traits",
         "KiokuJS.Test.Fixture.Intrinsic",
         "KiokuJS.Test.Fixture.Immutable",
+        "KiokuJS.Test.Fixture.Proxy",
         
         "KiokuJS.Test.Fixture.BackendFeature.Overwrite",
         
