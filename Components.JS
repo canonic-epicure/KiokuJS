@@ -17,6 +17,7 @@ COMPONENTS = {
         
         "KiokuJS.Feature.Attribute.Intrinsic",
         "KiokuJS.Feature.Attribute.Skip",
+        "KiokuJS.Feature.Attribute.External",
         
         "KiokuJS.Feature.Class.Intrinsic",
         
