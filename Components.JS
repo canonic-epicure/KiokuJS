@@ -82,6 +82,7 @@ COMPONENTS = {
         "KiokuJS.Test.Fixture.Intrinsic",
         "KiokuJS.Test.Fixture.Immutable",
         "KiokuJS.Test.Fixture.Proxy",
+        "KiokuJS.Test.Fixture.AnimatePacket",
         
         "KiokuJS.Test.Fixture.BackendFeature.Overwrite",
         
