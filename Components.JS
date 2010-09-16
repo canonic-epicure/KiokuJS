@@ -16,6 +16,7 @@ COMPONENTS = {
         "KiokuJS.Aspect.AfterExpand",
         
         "KiokuJS.Feature.Attribute.Intrinsic",
+        "KiokuJS.Feature.Attribute.Extrinsic",
         "KiokuJS.Feature.Attribute.Skip",
         "KiokuJS.Feature.Attribute.Proxy",
         
