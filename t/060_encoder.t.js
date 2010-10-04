@@ -103,6 +103,9 @@ StartTest(function(t) {
         t.ok(homerData.self.$ref == homerEntry.ID, "Homer's entry has correct self-reference")
         t.ok(homerData.spouse.$ref == margeNode.ID, "Homer's entry has correct `spouse` ref")
         t.ok(homerData.children.$ref == childrenNode.ID, "Homer's entry has correct `children` ref")
+        
+        t.ok(!homerData.hasOwnProperty('age'), "No property for 'age' attribute (entry only contain attributes with values)")
+        t.ok(!homerData.hasOwnProperty('task'), "No property for 'task' attribute (entry only contain attributes with values)")
 
         
         t.ok(margeEntry.$entry, "Marge's entry is marked with $entry")
@@ -114,6 +117,8 @@ StartTest(function(t) {
         t.ok(margeData.self.$ref == margeEntry.ID, "Marge's entry has correct self-reference")
         t.ok(margeData.spouse.$ref == homerNode.ID, "Marge's entry has correct `spouse` ref")
         t.ok(margeData.children.$ref == childrenNode.ID, "Marge's entry has correct `children` ref")
+        
+        t.ok(!margeData.hasOwnProperty('age'), "No property for 'age' attribute (entry only contain attributes with values)")
         
         
         t.ok(childrenEntry.$entry, "Children's entry is marked with $entry")
