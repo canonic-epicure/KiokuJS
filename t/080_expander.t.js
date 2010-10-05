@@ -111,6 +111,17 @@ StartTest(function(t) {
         t.ok(Marge2.spouse() == Homer2, 'Marge2 is a spouse of Homer2')
 
 
+        //======================================================================================================================================================================================================================================================
+        t.diag("Checking that objects has no values for attributes which hasn't been stored")
+        
+        t.ok(!Homer2.hasOwnProperty('age'), 'Homer has no own `age` property')
+        
+        t.ok(Homer2.age === 0, 'Its `age` value is coming from the prototype')
+        
+        
+        //======================================================================================================================================================================================================================================================
+        t.diag('Checking newly created objects - continued')
+        
         
         var children2Homer  = Homer2.children 
         var children2Marge  = Marge2.children
