@@ -70,6 +70,7 @@ Harness.start(
     '160_fixture_immutable.t.js',
     '170_fixture_proxy.t.js',
     '180_fixture_animate_packet.t.js',
+    '190_fixture_lazy.t.js',
     
     '200_fixture_feature_overwrite.t.js',
     '300_fixture_stressload_tree.t.js'
