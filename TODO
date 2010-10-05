@@ -5,8 +5,6 @@ TASKS
   may be switch it to JooseX.Proto.Class? (needs to be benchmarked first)
 
 - serialization of dates (test)
-- deserialization tests
-- serialization of `undefined` (currently as null)
 
 
 
@@ -20,6 +18,8 @@ TASKS
 DONE
 ====
 
+- deserialization tests
+- serialization of `undefined` (currently as null)
 - KiokuJS.Serializer.JSON.BuiltIn (JSON.stringify)
 - KiokuJS.Test.Fixture - a set of tests fixtures to run with different backends
 - harmonize approach to Data.Visitor subclassing across whole system

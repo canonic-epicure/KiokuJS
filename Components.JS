@@ -19,6 +19,7 @@ COMPONENTS = {
         "KiokuJS.Feature.Attribute.Extrinsic",
         "KiokuJS.Feature.Attribute.Skip",
         "KiokuJS.Feature.Attribute.Proxy",
+        "KiokuJS.Feature.Attribute.Lazy",
         
         "KiokuJS.Feature.Class.Intrinsic",
         
