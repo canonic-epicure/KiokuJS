@@ -70,23 +70,23 @@ StartTest(function(t) {
         t.diag('Setting up nodes & entries')
         
         var homerNode           = scope.objectToNode(Homer)
-        var homerEntry          = backend.encodeNode(homerNode)
+        var homerEntry          = scope.encodeNode(homerNode)
         var homerData           = homerEntry.data
         
         var margeNode           = scope.objectToNode(Marge)
-        var margeEntry          = backend.encodeNode(margeNode)
+        var margeEntry          = scope.encodeNode(margeNode)
         var margeData           = margeEntry.data
 
         var bartNode            = scope.objectToNode(Bart)
-        var bartEntry           = backend.encodeNode(bartNode)
+        var bartEntry           = scope.encodeNode(bartNode)
         var bartData            = bartEntry.data
 
         var lisaNode            = scope.objectToNode(Lisa)
-        var lisaEntry           = backend.encodeNode(lisaNode)
+        var lisaEntry           = scope.encodeNode(lisaNode)
         var lisaData            = lisaEntry.data
         
         var childrenNode        = scope.objectToNode(kids)
-        var childrenEntry       = backend.encodeNode(childrenNode)
+        var childrenEntry       = scope.encodeNode(childrenNode)
         var childrenData        = childrenEntry.data
 
         

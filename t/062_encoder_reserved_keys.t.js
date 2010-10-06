@@ -49,7 +49,7 @@ StartTest(function(t) {
     t.diag('Setting up nodes & entries')
     
     var instanceNode           = scope.objectToNode(instance)
-    var instanceEntry          = backend.encodeNode(instanceNode)
+    var instanceEntry          = scope.encodeNode(instanceNode)
     var instanceData           = instanceEntry.data
         
     

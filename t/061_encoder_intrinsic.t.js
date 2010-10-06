@@ -58,11 +58,11 @@ StartTest(function(t) {
         t.diag('Setting up nodes & entries')
         
         var graphNode           = scope.objectToNode(graph)
-        var graphEntry          = backend.encodeNode(graphNode)
+        var graphEntry          = scope.encodeNode(graphNode)
         var graphData           = graphEntry.data
         
         var arrayNode           = scope.objectToNode(array)
-        var arrayEntry          = backend.encodeNode(arrayNode)
+        var arrayEntry          = scope.encodeNode(arrayNode)
         var arrayData           = arrayEntry.data
         
         

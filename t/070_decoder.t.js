@@ -79,11 +79,20 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Decoding entries')
         
-        var homerNode2          = backend.deserializeNode(backend.serializeNode(homerNode))
-        var margeNode2          = backend.deserializeNode(backend.serializeNode(margeNode))
-        var bartNode2           = backend.deserializeNode(backend.serializeNode(bartNode))
-        var lisaNode2           = backend.deserializeNode(backend.serializeNode(lisaNode))
-        var childrenNode2       = backend.deserializeNode(backend.serializeNode(childrenNode))
+        var roundTrip = function (scope, backend, node) {
+            
+            var string  = backend.serialize(scope.encodeNodes([ node ]))
+            
+            var node    = scope.decodeEntries(backend.deserialize([ string ]))
+            
+            return node
+        }
+        
+        var homerNode2          = roundTrip(scope, backend, homerNode)
+        var margeNode2          = roundTrip(scope, backend, margeNode)
+        var bartNode2           = roundTrip(scope, backend, bartNode)
+        var lisaNode2           = roundTrip(scope, backend, lisaNode)
+        var childrenNode2       = roundTrip(scope, backend, childrenNode)
         
         
         //======================================================================================================================================================================================================================================================

@@ -18,25 +18,19 @@ StartTest(function(t) {
     
     backend.insert([
     
-        new KiokuJS.Node({ 
+        { 
             ID          : 1,
-            
             className   : 'Object',
-            
-            resolver     : backend.resolver,
             
             data        : { foo : "foo1" } 
-        }),
+        },
         
-        new KiokuJS.Node({ 
+        { 
             ID          : 2, 
-            
             className   : 'Object',
             
-            resolver     : backend.resolver,
-            
             data        : { bar : "foo2" } 
-        })
+        }
         
     ]).andThen(function () {
         
@@ -58,8 +52,11 @@ StartTest(function(t) {
                 t.ok(res[0].data.bar == 'foo2', 'Entry with ID = 2, retrieved correctly')
                 t.ok(res[1].data.foo == 'foo1', 'Entry with ID = 1, retrieved correctly')
                 
+                //======================================================================================================================================================================================================================================================
+                t.diag('Remove')
+            
                 backend.remove([ 1, 2 ]).andThen(function () {
-                
+                    
                     backend.exists([ 1, 2 ]).andThen(function (res) {
                         
                         t.ok(!res[0], "Entry with ID = 1 doesn't exists")

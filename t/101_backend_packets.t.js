@@ -45,7 +45,7 @@ StartTest(function(t) {
     //======================================================================================================================================================================================================================================================
     t.diag('Encoding graph')
     
-    var packet = backend.encodeObjects({ 'homer' : Homer }, [ Lisa ])
+    var packet = backend.encodePacket({ 'homer' : Homer }, [ Lisa ])
     
     t.ok(packet, 'Something has been returned as the result')
     
@@ -60,7 +60,7 @@ StartTest(function(t) {
     //======================================================================================================================================================================================================================================================
     t.diag('Decoding graph')
     
-    var result = backend.decodeObjects(packet)
+    var result = backend.decodePacket(packet)
     
     var custom  = result[0]
     var IDs     = result[1]
