@@ -53,8 +53,17 @@ StartTest(function(t) {
     
     //======================================================================================================================================================================================================================================================
     t.diag('Decoding entries')
+    
+    var roundTrip = function (scope, backend, node) {
+        
+        var strings = backend.serialize(scope.encodeNodes([ node ]))
+        var nodes   = scope.decodeEntries(backend.deserialize(strings))
+        
+        return nodes[0]
+    }
+    
 
-    var instanceNode2           = backend.deserializeNode(backend.serializeNode(instanceNode))
+    var instanceNode2           = roundTrip(scope, backend, instanceNode)
     var instanceData2           = instanceNode2.data
     
     

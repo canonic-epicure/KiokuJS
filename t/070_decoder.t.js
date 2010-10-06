@@ -81,11 +81,10 @@ StartTest(function(t) {
         
         var roundTrip = function (scope, backend, node) {
             
-            var string  = backend.serialize(scope.encodeNodes([ node ]))
+            var strings = backend.serialize(scope.encodeNodes([ node ]))
+            var nodes   = scope.decodeEntries(backend.deserialize(strings))
             
-            var node    = scope.decodeEntries(backend.deserialize([ string ]))
-            
-            return node
+            return nodes[0]
         }
         
         var homerNode2          = roundTrip(scope, backend, homerNode)

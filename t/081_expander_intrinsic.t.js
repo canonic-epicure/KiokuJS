@@ -66,7 +66,16 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Round-triping nodes')
         
-        var nodes2          = backend.deserializeNodes(backend.serializeNodes(nodes))
+        var roundTrip = function (scope, backend, nodes) {
+            
+            var strings = backend.serialize(scope.encodeNodes(nodes))
+            var nodes   = scope.decodeEntries(backend.deserialize(strings))
+            
+            return nodes
+        }
+        
+        
+        var nodes2          = roundTrip(scope, backend, nodes)
         var nodesByID       = {}
         
         Joose.A.each(nodes2, function (node) {

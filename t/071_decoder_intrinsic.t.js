@@ -66,8 +66,17 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Decoding entries')
         
-        var graphNode2          = backend.deserializeNode(backend.serializeNode(graphNode))
-        var arrayNode2          = backend.deserializeNode(backend.serializeNode(arrayNode))
+        var roundTrip = function (scope, backend, node) {
+            
+            var strings = backend.serialize(scope.encodeNodes([ node ]))
+            var nodes   = scope.decodeEntries(backend.deserialize(strings))
+            
+            return nodes[0]
+        }
+        
+        
+        var graphNode2          = roundTrip(scope, backend, graphNode)
+        var arrayNode2          = roundTrip(scope, backend, arrayNode)
         
         var graphData2          = graphNode2.data
         var arrayData2          = arrayNode2.data
