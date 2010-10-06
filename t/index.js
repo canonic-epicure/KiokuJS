@@ -18,17 +18,10 @@ Harness.configure({
 //    keepResults : true,
 //    verbosity : 1,
     
-    preload : Joose.is_NodeJS ? [
-        'Task.KiokuJS.NodeJSPrereq',
+    preload : [
+        'Task.KiokuJS.Prereq',
         {
-            text : "JooseX.Namespace.Depended.Manager.my.INC = " + JSON.stringify(INC)
-        },
-        'Task.KiokuJS.Test'
-        
-    ] : [
-        'Task.KiokuJS.WebPrereq',
-        {
-            text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(Harness.absolutizeINC(INC))
+            text : "JooseX.Namespace.Depended.Manager.my.INC = " + Harness.prepareINC(INC)
         },
         'Task.KiokuJS.Test'
     ]

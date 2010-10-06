@@ -98,16 +98,17 @@ COMPONENTS = {
     "Prereq" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
-        "jsan:Task.JooseX.Namespace.Depended.Auto",
-        "jsan:Task.JooseX.CPS.All",
         
+        "jsan:Task.JooseX.Namespace.Depended.Auto",
+        
+        "jsan:Task.JooseX.CPS.All",
         "jsan:Data.UUID",
         "jsan:Data.Visitor",
         "jsan:Task.JSON2.Bundle"
     ],
     
     
-    "WebPrereq" : [
+    "PureWebPrereq" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
         
@@ -121,7 +122,7 @@ COMPONENTS = {
     ],
     
     
-    "NodeJSPrereq" : [
+    "PureNodeJSPrereq" : [
         "jsan:Task.Joose.Core",
         "jsan:Task.JooseX.Attribute.Bootstrap",
         
