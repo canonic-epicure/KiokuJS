@@ -14,9 +14,7 @@ StartTest(function(t) {
         fixtures    : [ 'AnimatePacket' ],
         
         connect     : function () {
-            this.CONTINUE(KiokuJS.connect({
-                backend : new KiokuJS.Backend.Hash()
-            }))
+            this.CONTINUE(new KiokuJS.Backend.Hash())
         }
         
     }).runAllFixtures().andThen(function () {
