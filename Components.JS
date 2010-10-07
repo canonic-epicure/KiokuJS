@@ -57,8 +57,6 @@ COMPONENTS = {
         "KiokuJS.Backend.Feature.Update",
         
         "KiokuJS.Backend",
-        "KiokuJS.Backend.Hash",
-        
         
         "KiokuJS.Collapser",
         "KiokuJS.Linker",
@@ -70,6 +68,7 @@ COMPONENTS = {
     
     "Test" : [
         "+Core",
+        "KiokuJS.Backend.Hash",
         
         "KiokuJS.Test.Person",
         "KiokuJS.Test.Person.Hobby",

@@ -52,7 +52,7 @@ StartTest(function(t) {
     
     t.ok(packet.entries.length == 5, 'Packet contain 5 first-class entries')
     
-    t.ok(packet.customIDs.homer, 'Packet contain `homer` custom ID')
+    t.ok(packet.customIDs[0] == 'homer', 'Packet contain `homer` custom ID')
     
     t.ok(packet.IDs.length == 1, 'Packet contain a single assigned ID')
     
