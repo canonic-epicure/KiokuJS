@@ -56,10 +56,10 @@ COMPONENTS = {
         "KiokuJS.Backend.Feature.Overwrite",
         "KiokuJS.Backend.Feature.Update",
         
-        "KiokuJS.Backend",
-        
         "KiokuJS.Collapser",
         "KiokuJS.Linker",
+        
+        "KiokuJS.Backend",
         
         "KiokuJS.Scope",
         "KiokuJS"
