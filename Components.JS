@@ -12,6 +12,7 @@ COMPONENTS = {
         "KiokuJS.Exception.LookUp",
         "KiokuJS.Exception.Conflict",
         
+        "KiokuJS.Aspect.BeforeCollapse",
         "KiokuJS.Aspect.AfterCollapse",
         "KiokuJS.Aspect.AfterExpand",
         
