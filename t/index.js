@@ -14,7 +14,7 @@ var INC = [ '../lib', '/jsan' ]
 Harness.configure({
     title : 'KiokuJS Test Suite',
     
-//    transparentEx : true,
+    transparentEx : true,
 //    keepResults : true,
 //    verbosity : 1,
     
