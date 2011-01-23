@@ -3,6 +3,8 @@ COMPONENTS = {
     "Core" : [
         "KiokuJS.Reference",
         
+        "KiokuJS.Feature.Attribute.Skip",
+        
         "KiokuJS.Exception",
         "KiokuJS.Exception.Network",
         "KiokuJS.Exception.Format",
@@ -18,7 +20,6 @@ COMPONENTS = {
         
         "KiokuJS.Feature.Attribute.Intrinsic",
         "KiokuJS.Feature.Attribute.Extrinsic",
-        "KiokuJS.Feature.Attribute.Skip",
         "KiokuJS.Feature.Attribute.Proxy",
         "KiokuJS.Feature.Attribute.Lazy",
         
