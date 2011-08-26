@@ -1,0 +1,129 @@
+COMPONENTS = {
+    
+    'Prereq' : [
+        'node_modules/joose/joose-all.js',
+        'node_modules/joosex-attribute/joosex-attribute-all.js',
+        
+        'node_modules/joosex-namespace-depended/joosex-namespace-depended-all.js',
+        
+        'node_modules/joosex-cps/joosex-cps-all.js',
+        'node_modules/data-uuid/lib/Data/UUID.js',
+        'node_modules/data-visitor/lib/Data/Visitor.js',
+        'node_modules/json2/json2-all.js'
+    ],
+    
+    
+    'Core' : [
+        'KiokuJS.Reference',
+        
+        'KiokuJS.Feature.Attribute.Skip',
+        
+        'KiokuJS.Exception',
+        'KiokuJS.Exception.Network',
+        'KiokuJS.Exception.Format',
+        'KiokuJS.Exception.Overwrite',
+        'KiokuJS.Exception.Update',
+        'KiokuJS.Exception.Remove',
+        'KiokuJS.Exception.LookUp',
+        'KiokuJS.Exception.Conflict',
+        
+        'KiokuJS.Aspect.BeforeCollapse',
+        'KiokuJS.Aspect.AfterCollapse',
+        'KiokuJS.Aspect.AfterExpand',
+        
+        'KiokuJS.Feature.Attribute.Intrinsic',
+        'KiokuJS.Feature.Attribute.Extrinsic',
+        'KiokuJS.Feature.Attribute.Proxy',
+        'KiokuJS.Feature.Attribute.Lazy',
+        
+        'KiokuJS.Feature.Class.Intrinsic',
+        
+        'KiokuJS.Feature.Class.OwnID',
+        'KiokuJS.Feature.Class.OwnUUID',
+        'KiokuJS.Feature.Class.Immutable',
+        
+        'KiokuJS.Role.Serializer',
+        'KiokuJS.Serializer.JSON',
+        
+        'KiokuJS.TypeMap.Role.NoDeps',
+        
+        'KiokuJS.TypeMap',
+        'KiokuJS.TypeMap.Date',
+        'KiokuJS.TypeMap.Function',
+        'KiokuJS.TypeMap.Array',
+        'KiokuJS.TypeMap.Object',
+        'KiokuJS.TypeMap.Joose',
+        
+        'KiokuJS.Resolver',
+        'KiokuJS.Resolver.Standard',
+        
+        'KiokuJS.Role.Resolvable',
+        
+        'KiokuJS.Node',
+        
+        'KiokuJS.Collapser.Encoder',
+        'KiokuJS.Linker.Decoder',
+        
+        'KiokuJS.Linker.RefGatherer',
+        'KiokuJS.Linker.Expander',
+        
+        'KiokuJS.Backend.Role.SkipFixture',
+        'KiokuJS.Backend.Feature.Overwrite',
+        'KiokuJS.Backend.Feature.Update',
+        
+        'KiokuJS.Collapser',
+        'KiokuJS.Linker',
+        
+        'KiokuJS.Scope',
+        'KiokuJS.Backend',
+        
+        'KiokuJS'
+    ],
+
+    
+    All : {
+        saveAs      : 'kiokujs-all.js',
+        
+        contains    : [
+            '+Prereq',
+            '+Core'
+        ]
+    },
+    
+    
+    Test : {
+        saveAs      : 'kiokujs-test.js',
+        
+        contains    : [
+            '+All',
+            
+            'KiokuJS.Backend.Hash',
+            
+            'KiokuJS.Test.Person',
+            'KiokuJS.Test.Person.Hobby',
+            'KiokuJS.Test.Vertex',
+            
+            'KiokuJS.Test.ValueWrapper',
+            'KiokuJS.Test.TypeMap.ValueWrapper',
+            
+            'KiokuJS.Test.Fixture',
+            'KiokuJS.Test.Fixture.ObjectGraph',
+            'KiokuJS.Test.Fixture.Update',
+            'KiokuJS.Test.Fixture.Remove',
+            'KiokuJS.Test.Fixture.Refresh',
+            'KiokuJS.Test.Fixture.Traits',
+            'KiokuJS.Test.Fixture.Intrinsic',
+            'KiokuJS.Test.Fixture.Immutable',
+            'KiokuJS.Test.Fixture.Proxy',
+            'KiokuJS.Test.Fixture.AnimatePacket',
+            'KiokuJS.Test.Fixture.Lazy',
+            
+            'KiokuJS.Test.Fixture.BackendFeature.Overwrite',
+            
+            'KiokuJS.Test.Fixture.StressLoad.Tree',
+            
+            'KiokuJS.Test'
+        ]
+    }
+
+}

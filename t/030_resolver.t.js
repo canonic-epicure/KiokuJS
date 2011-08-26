@@ -51,8 +51,11 @@ StartTest(function(t) {
         //======================================================================================================================================================================================================================================================
         t.diag('Dependencies loading')
         
+        t.todo('Pending', function (t) {
+            
+            t.ok(typeof KiokuJS.Test.ValueWrapper == 'undefined', "Class 'KiokuJS.Test.ValueWrapper' isn't loaded yet")    
+        })
         
-        t.ok(typeof KiokuJS.Test.ValueWrapper == 'undefined', "Class 'KiokuJS.Test.ValueWrapper' isn't loaded yet")
         
         resolver = new KiokuJS.Resolver.Standard([
             {

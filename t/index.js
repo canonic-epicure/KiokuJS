@@ -8,22 +8,15 @@ if (typeof process != 'undefined' && process.pid) {
     Harness = Test.Run.Harness.Browser.ExtJS
         
     
-var INC = [ '../lib', '/jsan' ]
-
-
 Harness.configure({
     title : 'KiokuJS Test Suite',
     
-    transparentEx : true,
-//    keepResults : true,
-//    verbosity : 1,
+    autoGlobalsCheck    : true,
+    
+//    transparentEx : true,
     
     preload : [
-        'Task.KiokuJS.Prereq',
-        {
-            text : "use.paths = " + Harness.prepareINC(INC)
-        },
-        'Task.KiokuJS.Test'
+        '../kiokujs-test.js'
     ]
 })
 
