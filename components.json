@@ -1,8 +1,7 @@
-COMPONENTS = {
+{
     
     'Prereq' : [
         'node_modules/joose/joose-all.js',
-        'node_modules/joosex-attribute/joosex-attribute-all.js',
         'node_modules/joosex-namespace-depended/joosex-namespace-depended-all.js',
         'node_modules/joosex-cps/joosex-cps-all.js',
         'node_modules/data-uuid/lib/Data/UUID.js',
